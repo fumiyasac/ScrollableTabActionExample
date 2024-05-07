@@ -13,6 +13,9 @@
 		DEB414732BEA7D2400DEF655 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB414722BEA7D2400DEF655 /* Preview Assets.xcassets */; };
 		DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4147B2BEA819600DEF655 /* AppDelegate.swift */; };
 		DEB4147F2BEA85EC00DEF655 /* FirstAppearExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4147E2BEA85EC00DEF655 /* FirstAppearExtension.swift */; };
+		DEB414812BEA866200DEF655 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414802BEA866200DEF655 /* StringExtension.swift */; };
+		DEB414832BEA868100DEF655 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414822BEA868100DEF655 /* ColorExtension.swift */; };
+		DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414842BEA869000DEF655 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		DEB414722BEA7D2400DEF655 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DEB4147B2BEA819600DEF655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB4147E2BEA85EC00DEF655 /* FirstAppearExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppearExtension.swift; sourceTree = "<group>"; };
+		DEB414802BEA866200DEF655 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		DEB414822BEA868100DEF655 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		DEB414842BEA869000DEF655 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				DEB4147E2BEA85EC00DEF655 /* FirstAppearExtension.swift */,
+				DEB414802BEA866200DEF655 /* StringExtension.swift */,
+				DEB414822BEA868100DEF655 /* ColorExtension.swift */,
+				DEB414842BEA869000DEF655 /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -168,7 +177,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
+				DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */,
 				DEB4146E2BEA7D2300DEF655 /* ContentView.swift in Sources */,
+				DEB414812BEA866200DEF655 /* StringExtension.swift in Sources */,
+				DEB414832BEA868100DEF655 /* ColorExtension.swift in Sources */,
 				DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */,
 				DEB4147F2BEA85EC00DEF655 /* FirstAppearExtension.swift in Sources */,
 			);
