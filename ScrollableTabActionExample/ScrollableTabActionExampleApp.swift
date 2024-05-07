@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct ScrollableTabActionExampleApp: App {
+
+    // MEMO: AppDelegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+    // MARK: - Body
     var body: some Scene {
         WindowGroup {
             ContentView()
