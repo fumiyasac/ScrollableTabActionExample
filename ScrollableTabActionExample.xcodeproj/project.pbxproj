@@ -18,6 +18,9 @@
 		DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414842BEA869000DEF655 /* UIColorExtension.swift */; };
 		DEB414892BEA89F200DEF655 /* FoodMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414882BEA89F200DEF655 /* FoodMenuScreen.swift */; };
 		DEB4148B2BEA89FB00DEF655 /* PremiumPosterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4148A2BEA89FB00DEF655 /* PremiumPosterScreen.swift */; };
+		DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */; };
+		DEB414922BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */; };
+		DEB414942BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		DEB414842BEA869000DEF655 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DEB414882BEA89F200DEF655 /* FoodMenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuScreen.swift; sourceTree = "<group>"; };
 		DEB4148A2BEA89FB00DEF655 /* PremiumPosterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterScreen.swift; sourceTree = "<group>"; };
+		DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterLineupModel.swift; sourceTree = "<group>"; };
+		DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuViewStateProvider.swift; sourceTree = "<group>"; };
+		DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterViewStateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 				DEB4146D2BEA7D2300DEF655 /* ContentView.swift */,
 				DEB4147D2BEA823200DEF655 /* Extension */,
 				DEB414792BEA811200DEF655 /* Screen */,
+				DEB4148C2BEC2B1600DEF655 /* Model */,
+				DEB4148D2BEC2B2F00DEF655 /* ViewStateProvider */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -115,6 +123,7 @@
 		DEB414862BEA899100DEF655 /* PremiumPosterScreen */ = {
 			isa = PBXGroup;
 			children = (
+				DEB414902BEC2EF300DEF655 /* PremiumPosterComponent */,
 				DEB4148A2BEA89FB00DEF655 /* PremiumPosterScreen.swift */,
 			);
 			path = PremiumPosterScreen;
@@ -126,6 +135,30 @@
 				DEB414882BEA89F200DEF655 /* FoodMenuScreen.swift */,
 			);
 			path = FoodMenuScreen;
+			sourceTree = "<group>";
+		};
+		DEB4148C2BEC2B1600DEF655 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEB4148D2BEC2B2F00DEF655 /* ViewStateProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */,
+				DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */,
+			);
+			path = ViewStateProvider;
+			sourceTree = "<group>";
+		};
+		DEB414902BEC2EF300DEF655 /* PremiumPosterComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PremiumPosterComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,13 +232,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
+				DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */,
 				DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */,
 				DEB4146E2BEA7D2300DEF655 /* ContentView.swift in Sources */,
 				DEB4148B2BEA89FB00DEF655 /* PremiumPosterScreen.swift in Sources */,
 				DEB414812BEA866200DEF655 /* StringExtension.swift in Sources */,
 				DEB414892BEA89F200DEF655 /* FoodMenuScreen.swift in Sources */,
 				DEB414832BEA868100DEF655 /* ColorExtension.swift in Sources */,
+				DEB414922BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift in Sources */,
 				DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */,
+				DEB414942BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift in Sources */,
 				DEB4147F2BEA85EC00DEF655 /* FirstAppearExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
