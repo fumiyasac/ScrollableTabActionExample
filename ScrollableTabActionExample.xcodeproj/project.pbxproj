@@ -21,6 +21,7 @@
 		DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */; };
 		DEB414922BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */; };
 		DEB414942BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */; };
+		DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414952BED9F6800DEF655 /* CGFloatExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterLineupModel.swift; sourceTree = "<group>"; };
 		DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuViewStateProvider.swift; sourceTree = "<group>"; };
 		DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterViewStateProvider.swift; sourceTree = "<group>"; };
+		DEB414952BED9F6800DEF655 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				DEB4147E2BEA85EC00DEF655 /* FirstAppearExtension.swift */,
 				DEB414802BEA866200DEF655 /* StringExtension.swift */,
 				DEB414842BEA869000DEF655 /* UIColorExtension.swift */,
+				DEB414952BED9F6800DEF655 /* CGFloatExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */,
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
 				DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */,
 				DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */,
