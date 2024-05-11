@@ -7,6 +7,8 @@
 
 import Foundation
 
+// 上側に配置したタブ型要素に関するModel要素
+
 struct PosterLineupModel: Identifiable {
 
     // MEMO: - Property
@@ -14,9 +16,9 @@ struct PosterLineupModel: Identifiable {
     // Struct内に設置したEnum値
     private(set) var id: Tab
 
-    //
+    // 上側に配置したタブ型要素におけるサイズを格納する変数
     var size: CGSize = .zero
-    //
+    // 上側に配置したタブ型要素におけるX軸方向のオフセット値を格納する変数
     var minX: CGFloat = .zero
 
     // MEMO: - Enum
