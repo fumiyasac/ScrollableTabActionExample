@@ -13,7 +13,7 @@ import SwiftUI
 
 // MARK: - Extension
 
-public extension View {
+extension View {
 
     // MARK: - Function
 
