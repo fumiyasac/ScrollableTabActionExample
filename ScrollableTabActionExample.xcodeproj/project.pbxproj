@@ -22,6 +22,7 @@
 		DEB414922BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */; };
 		DEB414942BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */; };
 		DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414952BED9F6800DEF655 /* CGFloatExtension.swift */; };
+		DEB414982BF1633B00DEF655 /* TabRectangleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414972BF1633B00DEF655 /* TabRectangleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuViewStateProvider.swift; sourceTree = "<group>"; };
 		DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterViewStateProvider.swift; sourceTree = "<group>"; };
 		DEB414952BED9F6800DEF655 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		DEB414972BF1633B00DEF655 /* TabRectangleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRectangleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				DEB414802BEA866200DEF655 /* StringExtension.swift */,
 				DEB414842BEA869000DEF655 /* UIColorExtension.swift */,
 				DEB414952BED9F6800DEF655 /* CGFloatExtension.swift */,
+				DEB414972BF1633B00DEF655 /* TabRectangleExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */,
 				DEB414942BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift in Sources */,
 				DEB4147F2BEA85EC00DEF655 /* FirstAppearExtension.swift in Sources */,
+				DEB414982BF1633B00DEF655 /* TabRectangleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

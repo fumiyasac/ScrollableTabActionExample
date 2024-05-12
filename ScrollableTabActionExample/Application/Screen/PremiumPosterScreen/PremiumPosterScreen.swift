@@ -25,6 +25,8 @@ struct PremiumPosterScreen: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     PremiumPosterScreen()
 }

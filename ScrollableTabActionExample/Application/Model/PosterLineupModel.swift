@@ -11,7 +11,7 @@ import Foundation
 
 struct PosterLineupModel: Identifiable {
 
-    // MEMO: - Property
+    // MARK: - Property
 
     // Struct内に設置したEnum値
     private(set) var id: Tab
@@ -21,7 +21,7 @@ struct PosterLineupModel: Identifiable {
     // 上側に配置したタブ型要素におけるX軸方向のオフセット値を格納する変数
     var minX: CGFloat = .zero
 
-    // MEMO: - Enum
+    // MARK: - Enum
 
     enum Tab: String, CaseIterable {
         case premiumDinner1 = "プレミアムディナーNo.1"

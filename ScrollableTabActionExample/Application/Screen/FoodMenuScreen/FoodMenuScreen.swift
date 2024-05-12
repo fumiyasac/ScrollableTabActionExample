@@ -25,6 +25,8 @@ struct FoodMenuScreen: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     FoodMenuScreen()
 }
