@@ -129,7 +129,6 @@
 		DEB414862BEA899100DEF655 /* PremiumPosterScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DEB414902BEC2EF300DEF655 /* PremiumPosterComponent */,
 				DEB4148A2BEA89FB00DEF655 /* PremiumPosterScreen.swift */,
 			);
 			path = PremiumPosterScreen;
@@ -158,13 +157,6 @@
 				DEB414932BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift */,
 			);
 			path = ViewStateProvider;
-			sourceTree = "<group>";
-		};
-		DEB414902BEC2EF300DEF655 /* PremiumPosterComponent */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PremiumPosterComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
