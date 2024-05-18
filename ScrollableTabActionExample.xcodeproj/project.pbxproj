@@ -25,6 +25,8 @@
 		DEB414982BF1633B00DEF655 /* TabRectangleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414972BF1633B00DEF655 /* TabRectangleExtension.swift */; };
 		DEB4149F2BF7004D00DEF655 /* PremiumPosterThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4149E2BF7004D00DEF655 /* PremiumPosterThumbnailView.swift */; };
 		DEB414A32BF7073600DEF655 /* ApiClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414A22BF7073600DEF655 /* ApiClientManager.swift */; };
+		DEB414A52BF8CC7500DEF655 /* PremiumPosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414A42BF8CC7500DEF655 /* PremiumPosterModel.swift */; };
+		DEB414A72BF8CE9600DEF655 /* FoodMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414A62BF8CE9600DEF655 /* FoodMenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		DEB414972BF1633B00DEF655 /* TabRectangleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRectangleExtension.swift; sourceTree = "<group>"; };
 		DEB4149E2BF7004D00DEF655 /* PremiumPosterThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterThumbnailView.swift; sourceTree = "<group>"; };
 		DEB414A22BF7073600DEF655 /* ApiClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientManager.swift; sourceTree = "<group>"; };
+		DEB414A42BF8CC7500DEF655 /* PremiumPosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterModel.swift; sourceTree = "<group>"; };
+		DEB414A62BF8CE9600DEF655 /* FoodMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */,
+				DEB414A42BF8CC7500DEF655 /* PremiumPosterModel.swift */,
+				DEB414A62BF8CE9600DEF655 /* FoodMenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,9 +277,11 @@
 				DEB414832BEA868100DEF655 /* ColorExtension.swift in Sources */,
 				DEB414922BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift in Sources */,
 				DEB4149F2BF7004D00DEF655 /* PremiumPosterThumbnailView.swift in Sources */,
+				DEB414A72BF8CE9600DEF655 /* FoodMenuModel.swift in Sources */,
 				DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */,
 				DEB414942BEC2F4500DEF655 /* PremiumPosterViewStateProvider.swift in Sources */,
 				DEB4147F2BEA85EC00DEF655 /* FirstAppearExtension.swift in Sources */,
+				DEB414A52BF8CC7500DEF655 /* PremiumPosterModel.swift in Sources */,
 				DEB414982BF1633B00DEF655 /* TabRectangleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
