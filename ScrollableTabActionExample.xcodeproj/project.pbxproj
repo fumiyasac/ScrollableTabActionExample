@@ -27,6 +27,8 @@
 		DEB414A32BF7073600DEF655 /* ApiClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414A22BF7073600DEF655 /* ApiClientManager.swift */; };
 		DEB414A52BF8CC7500DEF655 /* PremiumPosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414A42BF8CC7500DEF655 /* PremiumPosterModel.swift */; };
 		DEB414A72BF8CE9600DEF655 /* FoodMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414A62BF8CE9600DEF655 /* FoodMenuModel.swift */; };
+		DEB414AA2BF9384400DEF655 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DEB414A92BF9384400DEF655 /* Nuke */; };
+		DEB414AC2BF9384400DEF655 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = DEB414AB2BF9384400DEF655 /* NukeUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB414AA2BF9384400DEF655 /* Nuke in Frameworks */,
+				DEB414AC2BF9384400DEF655 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +215,10 @@
 			dependencies = (
 			);
 			name = ScrollableTabActionExample;
+			packageProductDependencies = (
+				DEB414A92BF9384400DEF655 /* Nuke */,
+				DEB414AB2BF9384400DEF655 /* NukeUI */,
+			);
 			productName = ScrollableTabActionExample;
 			productReference = DEB414682BEA7D2300DEF655 /* ScrollableTabActionExample.app */;
 			productType = "com.apple.product-type.application";
@@ -239,6 +247,9 @@
 				Base,
 			);
 			mainGroup = DEB4145F2BEA7D2300DEF655;
+			packageReferences = (
+				DEB414A82BF9384400DEF655 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = DEB414692BEA7D2300DEF655 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -488,6 +499,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEB414A82BF9384400DEF655 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEB414A92BF9384400DEF655 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEB414A82BF9384400DEF655 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		DEB414AB2BF9384400DEF655 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEB414A82BF9384400DEF655 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEB414602BEA7D2300DEF655 /* Project object */;
 }
