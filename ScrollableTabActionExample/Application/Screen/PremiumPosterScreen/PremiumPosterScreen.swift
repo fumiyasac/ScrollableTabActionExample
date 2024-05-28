@@ -26,6 +26,9 @@ struct PremiumPosterScreen: View {
     // Drag操作をしている最中の変化量を一時的に格納する変数
     @State private var progress: CGFloat
 
+    // 任意のTab要素タップ時からAnimation動作中に表示する連打防止用矩形エリア表示フラグ
+    @State private var showRectangleToPreventRepeatedHits: Bool
+
     // MARK: - Computed Property
 
     private var tabNameFont: Font {
@@ -49,6 +52,7 @@ struct PremiumPosterScreen: View {
         _tabViewScrollState = State(initialValue: nil)
         _mainViewScrollState = State(initialValue: nil)
         _progress = State(initialValue: .zero)
+        _showRectangleToPreventRepeatedHits = State(initialValue: false)
     }
 
     // MARK: - Body
@@ -120,41 +124,60 @@ struct PremiumPosterScreen: View {
 
     @ViewBuilder
     private func PremiumPosterTabView() -> some View {
-        // こちらはGeometryReaderで座標位置を取得する必要はない形で差し支えない
-        // 👉 .scrollTargetLayout() ＆ .scrollPosition(id: $tabViewScrollState) ＆ .scrollTargetBehavior(.paging)の組み合わせ
-        ScrollView(.horizontal, showsIndicators: false) {
-            // 👉 ScrollView & LazyHStackの組み合わせなので、どのタブ要素に移動したかに注目する
-            HStack(spacing: 24.0) {
-                // 👉 $tabsにしているのは`@State`の変化と連動させるため
-                ForEach($tabs) { $tab in
-                    Button(action: {
-                        // .snappyで弱いバネ運動の様な感じを演出する
-                        withAnimation(.snappy) {
-                            // 👉 Tab要素のスクロール位置 ＆ 現在選択されているTab要素 ＆ 現在選択されているContents要素を更新する
-                            activeTab = tab.id
-                            tabViewScrollState = tab.id
-                            mainViewScrollState = tab.id
+        // MEMO: ZStackを利用して、Tab要素配置用のScrollViewの上にRectangleを重ねて、連打防止処理を施す。
+        ZStack(alignment: .leading) {
+            // ① Tab要素配置用のScrollView
+            // こちらはGeometryReaderで座標位置を取得しなくとも差し支えない
+            // 👉 .scrollTargetLayout() ＆ .scrollPosition(id: $tabViewScrollState) ＆ .scrollTargetBehavior(.paging)を組み合わせる事で実現可能であるため
+            ScrollView(.horizontal, showsIndicators: false) {
+                // 👉 ScrollView & LazyHStackの組み合わせなので、どのタブ要素に移動したかに注目する
+                HStack(spacing: 24.0) {
+                    // 👉 $tabsにしているのは`@State`の変化と連動させるため
+                    ForEach($tabs) { $tab in
+                        Button(action: {
+                            // 0.00〜0.35秒間は連打防止用の矩形要素を表示した状態にする
+                            Task {
+                                showRectangleToPreventRepeatedHits = true
+                                try await Task.sleep(for: .milliseconds(350))
+                                showRectangleToPreventRepeatedHits = false
+                            }
+                            // .snappyで弱いバネ運動の様な感じを演出する
+                            withAnimation(.snappy) {
+                                // 👉 Tab要素のスクロール位置 ＆ 現在選択されているTab要素 ＆ 現在選択されているContents要素を更新する
+                                activeTab = tab.id
+                                tabViewScrollState = tab.id
+                                mainViewScrollState = tab.id
+                            }
+                        }) {
+                            // Tab要素配置用テキストを設定する
+                            // 👉 余談: 「.vertical = 12.0」をしているのは高さを調整するため
+                            Text(tab.id.rawValue)
+                                .font(tabNameFont)
+                                .fontWeight(.medium)
+                                .padding(.vertical, 12.0)
+                                .foregroundStyle(activeTab == tab.id ? tabUnderlineActiveColor : .gray)
+                                .contentShape(.rect)
                         }
-                    }) {
-                        // Tab要素配置用テキストを設定する
-                        // 👉 余談: 「.vertical = 12.0」をしているのは高さを調整するため
-                        Text(tab.id.rawValue)
-                            .font(tabNameFont)
-                            .fontWeight(.medium)
-                            .padding(.vertical, 12.0)
-                            .foregroundStyle(activeTab == tab.id ? tabUnderlineActiveColor : .gray)
-                            .contentShape(.rect)
-                    }
-                    .buttonStyle(.plain)
-                    // 独自に定義した「.getRectangleView」を利用してX軸方向のOffset値を取得する
-                    // 👉 Tab要素の文字列下部に配置した「動く下線表示」のX軸方向のOffset値になる点がポイント
-                    .getRectangleView { rect in
-                        tab.size = rect.size
-                        tab.minX = rect.minX
+                        .buttonStyle(.plain)
+                        // 独自に定義した「.getRectangleView」を利用してX軸方向のOffset値を取得する
+                        // 👉 Tab要素の文字列下部に配置した「動く下線表示」のX軸方向のOffset値になる点がポイント
+                        .getRectangleView { rect in
+                            tab.size = rect.size
+                            tab.minX = rect.minX
+                        }
                     }
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
+            // ② Tab表示エリアに合わせる形で連打防止用にRectangleを重ねる
+            // 👉 .clearを指定すると任意のタブを連続タップした際にTab要素が意図しない位置で停止してしまった
+            // 👉 任意の色を定めてopacityを0未満の小さな値にして対処する
+            if showRectangleToPreventRepeatedHits {
+                Rectangle()
+                    .fill(.red.opacity(0.001))
+                    .frame(height: 36.0)
+                    .padding(.horizontal, -16.0)
+            }
         }
         .scrollPosition(id: $tabViewScrollState, anchor: .center)
         // Tab要素を並べたScrollViewの上に更に要素を重ねる形を取る
