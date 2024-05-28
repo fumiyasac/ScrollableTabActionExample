@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */; };
 		DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4146B2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift */; };
 		DEB4146E2BEA7D2300DEF655 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4146D2BEA7D2300DEF655 /* ContentView.swift */; };
 		DEB414702BEA7D2400DEF655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB4146F2BEA7D2400DEF655 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRowView.swift; sourceTree = "<group>"; };
 		DEB414682BEA7D2300DEF655 /* ScrollableTabActionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableTabActionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB4146B2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabActionExampleApp.swift; sourceTree = "<group>"; };
 		DEB4146D2BEA7D2300DEF655 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE17390A2C03EB5300C13BCB /* FoodMenuComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */,
+			);
+			path = FoodMenuComponents;
+			sourceTree = "<group>";
+		};
 		DEB4145F2BEA7D2300DEF655 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		DEB414872BEA89E100DEF655 /* FoodMenuScreen */ = {
 			isa = PBXGroup;
 			children = (
+				DE17390A2C03EB5300C13BCB /* FoodMenuComponents */,
 				DEB414882BEA89F200DEF655 /* FoodMenuScreen.swift */,
 			);
 			path = FoodMenuScreen;
@@ -268,6 +279,7 @@
 			files = (
 				DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */,
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
+				DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */,
 				DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */,
 				DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */,
 				DEB4146E2BEA7D2300DEF655 /* ContentView.swift in Sources */,
