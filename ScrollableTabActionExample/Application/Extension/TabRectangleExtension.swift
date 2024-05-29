@@ -31,15 +31,3 @@ extension View {
         }
     }
 }
-
-// MARK: - Private Struct
-
-private struct OffsetPreferenceKey: PreferenceKey {
-
-    // MARK: - Property
-
-    static var defaultValue: CGRect = .zero
-    static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
-        value = nextValue()
-    }
-}
