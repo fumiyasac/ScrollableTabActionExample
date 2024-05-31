@@ -12,6 +12,9 @@ struct OffsetPreferenceKey: PreferenceKey {
     // MARK: - Property
 
     static var defaultValue: CGRect = .zero
+
+    // MARK: - Function
+
     static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
         value = nextValue()
     }
