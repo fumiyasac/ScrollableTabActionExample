@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */; };
+		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
 		DE64D28A2C0778170065D0F3 /* OffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */; };
 		DE64D28C2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */; };
 		DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4146B2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift */; };
@@ -31,8 +32,20 @@
 		DEB414A72BF8CE9600DEF655 /* FoodMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414A62BF8CE9600DEF655 /* FoodMenuModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DE61C9332C1205D30058FEEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEB414602BEA7D2300DEF655 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEB414672BEA7D2300DEF655;
+			remoteInfo = ScrollableTabActionExample;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRowView.swift; sourceTree = "<group>"; };
+		DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollableTabActionExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabActionExampleTests.swift; sourceTree = "<group>"; };
 		DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollingTabsExtension.swift; sourceTree = "<group>"; };
 		DEB414682BEA7D2300DEF655 /* ScrollableTabActionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableTabActionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DE61C92C2C1205D30058FEEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEB414652BEA7D2300DEF655 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,10 +96,19 @@
 			path = FoodMenuComponents;
 			sourceTree = "<group>";
 		};
+		DE61C9302C1205D30058FEEF /* ScrollableTabActionExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */,
+			);
+			path = ScrollableTabActionExampleTests;
+			sourceTree = "<group>";
+		};
 		DEB4145F2BEA7D2300DEF655 = {
 			isa = PBXGroup;
 			children = (
 				DEB4146A2BEA7D2300DEF655 /* ScrollableTabActionExample */,
+				DE61C9302C1205D30058FEEF /* ScrollableTabActionExampleTests */,
 				DEB414692BEA7D2300DEF655 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB414682BEA7D2300DEF655 /* ScrollableTabActionExample.app */,
+				DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +242,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DE61C92E2C1205D30058FEEF /* ScrollableTabActionExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE61C9372C1205D30058FEEF /* Build configuration list for PBXNativeTarget "ScrollableTabActionExampleTests" */;
+			buildPhases = (
+				DE61C92B2C1205D30058FEEF /* Sources */,
+				DE61C92C2C1205D30058FEEF /* Frameworks */,
+				DE61C92D2C1205D30058FEEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE61C9342C1205D30058FEEF /* PBXTargetDependency */,
+			);
+			name = ScrollableTabActionExampleTests;
+			productName = ScrollableTabActionExampleTests;
+			productReference = DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DEB414672BEA7D2300DEF655 /* ScrollableTabActionExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEB414762BEA7D2400DEF655 /* Build configuration list for PBXNativeTarget "ScrollableTabActionExample" */;
@@ -238,9 +286,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					DE61C92E2C1205D30058FEEF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DEB414672BEA7D2300DEF655;
+					};
 					DEB414672BEA7D2300DEF655 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -262,11 +314,19 @@
 			projectRoot = "";
 			targets = (
 				DEB414672BEA7D2300DEF655 /* ScrollableTabActionExample */,
+				DE61C92E2C1205D30058FEEF /* ScrollableTabActionExampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DE61C92D2C1205D30058FEEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEB414662BEA7D2300DEF655 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +339,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DE61C92B2C1205D30058FEEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEB414642BEA7D2300DEF655 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,7 +376,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DE61C9342C1205D30058FEEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEB414672BEA7D2300DEF655 /* ScrollableTabActionExample */;
+			targetProxy = DE61C9332C1205D30058FEEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		DE61C9352C1205D30058FEEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S5BF5553KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.just1factory.ScrollableTabActionExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollableTabActionExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScrollableTabActionExample";
+			};
+			name = Debug;
+		};
+		DE61C9362C1205D30058FEEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S5BF5553KY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.just1factory.ScrollableTabActionExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollableTabActionExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScrollableTabActionExample";
+			};
+			name = Release;
+		};
 		DEB414742BEA7D2400DEF655 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -487,6 +601,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DE61C9372C1205D30058FEEF /* Build configuration list for PBXNativeTarget "ScrollableTabActionExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE61C9352C1205D30058FEEF /* Debug */,
+				DE61C9362C1205D30058FEEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DEB414632BEA7D2300DEF655 /* Build configuration list for PBXProject "ScrollableTabActionExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
