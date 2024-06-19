@@ -10,6 +10,8 @@
 		DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */; };
 		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
 		DE61C94C2C2207EB0058FEEF /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = DE61C94B2C2207EB0058FEEF /* Testing */; };
+		DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */; };
+		DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */; };
 		DE64D28A2C0778170065D0F3 /* OffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */; };
 		DE64D28C2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */; };
 		DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4146B2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift */; };
@@ -47,6 +49,8 @@
 		DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRowView.swift; sourceTree = "<group>"; };
 		DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollableTabActionExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabActionExampleTests.swift; sourceTree = "<group>"; };
+		DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRepository.swift; sourceTree = "<group>"; };
+		DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterRepository.swift; sourceTree = "<group>"; };
 		DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollingTabsExtension.swift; sourceTree = "<group>"; };
 		DEB414682BEA7D2300DEF655 /* ScrollableTabActionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableTabActionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,8 @@
 		DEB414A02BF7070900DEF655 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */,
+				DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -367,11 +373,13 @@
 			files = (
 				DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */,
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
+				DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */,
 				DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */,
 				DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */,
 				DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */,
 				DEB4146E2BEA7D2300DEF655 /* ContentView.swift in Sources */,
 				DEB414A32BF7073600DEF655 /* ApiClientManager.swift in Sources */,
+				DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */,
 				DEB4148B2BEA89FB00DEF655 /* PremiumPosterScreen.swift in Sources */,
 				DE64D28A2C0778170065D0F3 /* OffsetPreferenceKey.swift in Sources */,
 				DEB414892BEA89F200DEF655 /* FoodMenuScreen.swift in Sources */,
