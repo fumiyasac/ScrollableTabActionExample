@@ -14,6 +14,7 @@
 		DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */; };
 		DE61C9532C24FD510058FEEF /* FoodMenuRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9522C24FD510058FEEF /* FoodMenuRequest.swift */; };
 		DE61C9552C24FD610058FEEF /* PremiumPosterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9542C24FD610058FEEF /* PremiumPosterRequest.swift */; };
+		DE61C9572C25D9760058FEEF /* FoodMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9562C25D9760058FEEF /* FoodMenuHeaderView.swift */; };
 		DE64D28A2C0778170065D0F3 /* OffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */; };
 		DE64D28C2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */; };
 		DEB4146C2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4146B2BEA7D2300DEF655 /* ScrollableTabActionExampleApp.swift */; };
@@ -55,6 +56,7 @@
 		DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterRepository.swift; sourceTree = "<group>"; };
 		DE61C9522C24FD510058FEEF /* FoodMenuRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRequest.swift; sourceTree = "<group>"; };
 		DE61C9542C24FD610058FEEF /* PremiumPosterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterRequest.swift; sourceTree = "<group>"; };
+		DE61C9562C25D9760058FEEF /* FoodMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuHeaderView.swift; sourceTree = "<group>"; };
 		DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollingTabsExtension.swift; sourceTree = "<group>"; };
 		DEB414682BEA7D2300DEF655 /* ScrollableTabActionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableTabActionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */,
+				DE61C9562C25D9760058FEEF /* FoodMenuHeaderView.swift */,
 			);
 			path = FoodMenuComponents;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */,
 				DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */,
 				DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */,
+				DE61C9572C25D9760058FEEF /* FoodMenuHeaderView.swift in Sources */,
 				DEB4146E2BEA7D2300DEF655 /* ContentView.swift in Sources */,
 				DEB414A32BF7073600DEF655 /* ApiClientManager.swift in Sources */,
 				DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */,
