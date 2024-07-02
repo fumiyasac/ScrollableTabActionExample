@@ -8,5 +8,14 @@
 import Foundation
 
 protocol FoodMenuRequest {
-    func getAll() async throws -> [PremiumPosterModel]
+    func getAll() async throws -> [FoodMenuModel]
+}
+
+final class FoodMenuRequestImpl: FoodMenuRequest {
+
+    // MARK: - Function
+
+    func getAll() async throws -> [FoodMenuModel] {
+        []
+    }
 }
