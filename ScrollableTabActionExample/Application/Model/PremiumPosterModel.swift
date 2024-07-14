@@ -17,5 +17,5 @@ struct PremiumPosterModel: Identifiable {
     let title: String
     let subTitle: String
     let price: Int
-    let posterUrl: URL?
+    let posterIdentifier: String
 }
