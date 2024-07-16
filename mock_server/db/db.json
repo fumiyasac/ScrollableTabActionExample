@@ -1,4 +1,87 @@
 {
-    "get_premium_posters": [],
-    "get_food_menus": []
+    "premium_posters": [
+      {
+        "id": 1,
+        "poster_id": 1,
+        "tab": "プレミアムディナーNo.1",
+        "title": "イタリアンをベースとした本格的なコースをお楽しみ下さい！",
+        "sub_title": "海の幸・山の幸をバランス良く取り入れた合計8品ラインナップ。ワインと一緒に特別な時間を過ごしてみて下さい。",
+        "price": 8000,
+        "poster_identifier": "premium_dinner_1"
+      },
+      {
+        "id": 2,
+        "poster_id": 2,
+        "tab": "プレミアムディナーNo.2",
+        "title": "当店一番おすすめのラム肉のローストをご堪能あれ！",
+        "sub_title": "じっくり丁寧に焼き上げたラム肉の味わいはワインが進むこと間違いなし！特別な日を華麗に演出してくれることでしょう。",
+        "price": 12000,
+        "poster_identifier": "premium_dinner_2"
+      },
+      {
+        "id": 3,
+        "poster_id": 3,
+        "tab": "おうちパーティーNo.1",
+        "title": "幅広いラインナップでどんなパーティーでも大活躍！",
+        "sub_title": "パーティの定番和洋折衷して惜しみなく詰め込んだセットです！当店自慢の逸品を是非ともご堪能あれ！",
+        "price": 8000,
+        "poster_identifier": "home_party_selection_1"
+      },
+      {
+        "id": 4,
+        "poster_id": 4,
+        "tab": "おうちパーティーNo.2",
+        "title": "パーティの定番料理を集めたリーズナブルで満足できるセットです！",
+        "sub_title": "お値段以上に満足ができるお料理を中心に揃えたセットです！家族やご友人とワイワイ楽しむのには最適です！",
+        "price": 6000,
+        "poster_identifier": "home_party_selection_2"
+      },
+      {
+        "id": 5,
+        "poster_id": 5,
+        "tab": "クリスマス用ローストチキン",
+        "title": "当店一番おすすめのラム肉のローストをご堪能あれ！",
+        "sub_title": "じっくり丁寧に焼き上げたラム肉の味わいはワインが進むこと間違いなし！特別な日を華麗に演出してくれることでしょう。",
+        "price": 10000,
+        "poster_identifier": "premium_dinner_2"
+      },
+      {
+        "id": 6,
+        "poster_id": 6,
+        "tab": "おうち高級レストラン",
+        "title": "一流高級ホテルのシェフが監修した最高のディナーをご自宅で！",
+        "sub_title": "ホテルディナーと同じラインナップを楽しめるプランになります。記念日や特別なAnniversaryを素敵に彩ってみましょう！",
+        "price": 35000,
+        "poster_identifier": "hotel_restaurant_style"
+      },
+      {
+        "id": 1,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
+        "title": "美味しい玉ねぎの年末年始の対応について",
+        "news_category": "生産者からのお知らせ",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+      },
+      {
+        "id": 1,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
+        "title": "美味しい玉ねぎの年末年始の対応について",
+        "news_category": "生産者からのお知らせ",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+      },
+      {
+        "id": 1,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
+        "title": "美味しい玉ねぎの年末年始の対応について",
+        "news_category": "生産者からのお知らせ",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+      },
+      {
+        "id": 1,
+        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
+        "title": "美味しい玉ねぎの年末年始の対応について",
+        "news_category": "生産者からのお知らせ",
+        "published_at": "2022-12-01T07:30:00.000+0000"
+      },
+    ],
+    "food_menus": []
 }
