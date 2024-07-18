@@ -55,33 +55,41 @@
         "poster_identifier": "hotel_restaurant_style"
       },
       {
-        "id": 1,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
-        "title": "美味しい玉ねぎの年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
+        "id": 7,
+        "poster_id": 7,
+        "tab": "おうちdeイタリアン",
+        "title": "シェフの腕が光る本格派イタリアンケータリングをご自宅で！",
+        "sub_title": "自宅で楽しめるボリューミーで大満足なラインナップ。前菜・サラダ・パスタ・メインディッシュ・デザートの5点セット！",
+        "price": 12000,
+        "poster_identifier": "italian_party"
       },
       {
-        "id": 1,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
-        "title": "美味しい玉ねぎの年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
+        "id": 8,
+        "poster_id": 8,
+        "tab": "Italian Premium",
+        "title": "最高級イタリアンスタイルのケータリングを是非お楽しみ下さい！",
+        "sub_title": "陸海空の素材を利用したハイクオリティな味わい。前菜・サラダ・パスタ・魚料理・肉料理・デザート・ワインの7点セット！",
+        "price": 26000,
+        "poster_identifier": "italian_premium_selection"
       },
       {
-        "id": 1,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
-        "title": "美味しい玉ねぎの年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
+        "id": 9,
+        "poster_id": 9,
+        "tab": "本格おつまみ",
+        "title": "飲み会やパーティにも最適なお酒よく合うお料理を揃えました！",
+        "sub_title": "定番のお料理の中にきらりと光るシェフのこだわり！いつもよりお酒がついつい進んでしまうこと間違いなしです。",
+        "price": 8000,
+        "poster_identifier": "alcohol_snacks"
       },
       {
-        "id": 1,
-        "thumbnail_url": "https://ones-mind-topics.s3.ap-northeast-1.amazonaws.com/news_thumbnail1.jpg",
-        "title": "美味しい玉ねぎの年末年始の対応について",
-        "news_category": "生産者からのお知らせ",
-        "published_at": "2022-12-01T07:30:00.000+0000"
-      },
+        "id": 10,
+        "poster_id": 10,
+        "tab": "本格ローストビーフ",
+        "title": "じっくり丁寧に焼き上げた当店自慢のローストビーフです！",
+        "sub_title": "冷めても美味しく召し上がれる工夫を凝らした、プレミアムなローストビーフを心ゆくまでご堪能ください！",
+        "price": 10000,
+        "poster_identifier": "alcohol_snacks"
+      }
     ],
     "food_menus": []
 }
