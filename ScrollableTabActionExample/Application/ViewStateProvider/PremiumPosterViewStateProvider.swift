@@ -8,14 +8,25 @@
 import Foundation
 import Observation
 
+// MARK: - Protocol
+
 protocol PremiumPosterViewStateProvider {
+
+    var premiumPosterModels: [PremiumPosterModel] { get }
+
     func fetchPremiumPosters()
 }
+
+// MARK: - Protocol
 
 @Observable
 public final class PremiumPosterViewStateProviderImpl: PremiumPosterViewStateProvider {
 
-    // MARK: - Functions
+    // MARK: - Property
+
+    private (set)var premiumPosterModels: [PremiumPosterModel] = []
+
+    // MARK: - Function
 
     func fetchPremiumPosters() {}
 }
