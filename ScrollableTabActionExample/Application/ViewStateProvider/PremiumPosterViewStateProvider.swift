@@ -8,5 +8,14 @@
 import Foundation
 import Observation
 
+protocol PremiumPosterViewStateProvider {
+    func fetchPremiumPosters()
+}
+
 @Observable
-public final class PremiumPosterViewStateProvider {}
+public final class PremiumPosterViewStateProviderImpl: PremiumPosterViewStateProvider {
+
+    // MARK: - Functions
+
+    func fetchPremiumPosters() {}
+}
