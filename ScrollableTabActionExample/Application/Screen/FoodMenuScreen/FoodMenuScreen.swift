@@ -28,12 +28,12 @@ struct FoodMenuScreen: View {
     // タブ要素をScrollに追従して動かす際に利用するNamespace Property Wrapper
     @Namespace private var animation
 
-    //
+    // Toolbar要素の背景色
     private var toolbarBackgroundColor: Color {
         Color(uiColor: UIColor(code: "#bf6301"))
     }
 
-    //
+    // 文字列を基準としてGeometryReaderから座標値を取得するにあたり、基準となる特定の文字列
     private let coordinateSpaceContentView = "CONTENTVIEW"
 
     // MARK: - Initializer
