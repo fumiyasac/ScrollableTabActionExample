@@ -14,6 +14,9 @@ struct FoodMenuScreen: View {
     // 現在選択されているTab要素としての変数
     @State private var activeTab: FoodMenuModel.FoodMenuCategeory
 
+    // カテゴリー別にまとめた表示要素
+    @State private var foodMenuSummarizedCategory: [[FoodMenuModel]]
+
     // Animation実行時の変化量を格納するための変数
     @State private var animationProgress: CGFloat
 
@@ -41,6 +44,7 @@ struct FoodMenuScreen: View {
     init() {
         // `@State`で定義するものの初期値を設定する
         _activeTab = State(initialValue: .fish)
+        _foodMenuSummarizedCategory = State(initialValue: [])
         _animationProgress = State(initialValue: 0.0)
         _scrollableTabOffset = State(initialValue: 0.0)
         _initialOffset = State(initialValue: 0.0)
@@ -64,6 +68,17 @@ struct FoodMenuScreen: View {
                 // カテゴリー別のフードメニュー要素一覧を並べる
                 VStack(spacing: 0.0) {
                     // TODO: ForEach + LazyVStack等を利用したリスト表示をする
+                    
+//                    LazyVStack(spacing: 16.0, pinnedViews: [.sectionHeaders]) {
+//                        Section {
+//                            ForEach(foodMenuSummarizedCategory, id: \.self) { foodMenu in
+//                               FoodMenuSectionView(products)
+//                            }
+//                        } header: {
+//                            FoodMenuHeader(proxy)
+//                        }
+//                    }
+                    
                 }
                 // coordinateSpaceに定義した名前空間を基準としたオフセット値を反映する処理
                 .getRectangleViewToCoordinateSpace(coordinateSpaceContentView, completion: { rect in
@@ -86,6 +101,14 @@ struct FoodMenuScreen: View {
         // 要素全体が表示されたタイミングで実行される処理
         .onAppear {
             // TODO: Section毎にカテゴリー別のフードメニュー要素をまとめ直す
+
+            /// Filtering Products Based on Product Type (Only Once)
+            guard productsBasedOnType.isEmpty else { return }
+            
+            for type in ProductType.allCases {
+                let products = products.filter { $0.type == type }
+                productsBasedOnType.append(products)
+            }
         }
     }
 }
