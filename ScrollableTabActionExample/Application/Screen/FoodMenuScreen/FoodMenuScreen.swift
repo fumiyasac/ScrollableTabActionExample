@@ -102,12 +102,15 @@ struct FoodMenuScreen: View {
         .onAppear {
             // TODO: Section毎にカテゴリー別のフードメニュー要素をまとめ直す
 
-            /// Filtering Products Based on Product Type (Only Once)
-            guard productsBasedOnType.isEmpty else { return }
-            
-            for type in ProductType.allCases {
-                let products = products.filter { $0.type == type }
-                productsBasedOnType.append(products)
+            // データ取得がまだの場合は、以降の処理を実行しない
+            guard foodMenuSummarizedCategory.isEmpty else { return }
+
+            // FoodMenuCategeoryでフィルタリングをして表示内容をまとめる
+            for foodMenuCategeory in FoodMenuModel.FoodMenuCategeory.allCases {
+                // TODO: .filterで取得した値をFoodMenuCategeoryでフィルタリングする
+
+                //let foodMenus = allFoodMenus.filter { $0.category == foodMenuCategeory }
+                // foodMenuSummarizedCategory.append(products)
             }
         }
     }
