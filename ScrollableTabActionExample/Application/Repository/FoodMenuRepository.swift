@@ -10,3 +10,12 @@ import Foundation
 protocol FoodMenuRepository {
     func getAll() async throws -> [FoodMenuModel]
 }
+
+final class FoodMenuRepositoryImpl: FoodMenuRepository {
+
+    // MARK: - Function
+
+    func getAll() async throws -> [FoodMenuModel] {
+        []
+    }
+}

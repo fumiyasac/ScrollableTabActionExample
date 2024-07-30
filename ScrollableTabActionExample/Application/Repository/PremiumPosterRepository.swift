@@ -10,3 +10,12 @@ import Foundation
 protocol PremiumPosterRepository {
     func getAll() async throws -> [PremiumPosterModel]
 }
+
+final class PremiumPosterRepositoryImpl: PremiumPosterRepository {
+
+    // MARK: - Function
+
+    func getAll() async throws -> [PremiumPosterModel] {
+        []
+    }
+}
