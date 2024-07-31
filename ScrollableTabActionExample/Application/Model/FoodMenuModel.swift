@@ -24,14 +24,12 @@ struct FoodMenuModel: Identifiable {
     // MARK: - Enum
 
     enum FoodMenuCategeory: String, CaseIterable {
-        case fish = "🐟魚料理"
-        case meat = "🥩肉料理"
-        case noodle = "🍜麺類"
-        case rice = "🌾米"
-        case vegetable = "🥦野菜料理"
-        case dessert = "🍨デザート"
-        case bread = "🍞パン"
-        case seaweed = "🌊海藻"
-        case soup = "🍲スープ"
+        case fish = "🍛カレー"
+        case steak = "🥩ステーキ"
+        case chinese = "🍜中華料理"
+        case pasta = "🍝パスタ"
+        case sushi = "🍣お寿司"
+        case western = "🍔洋食"
+        case japanese = "🍲和食"
     }
 }
