@@ -31,11 +31,6 @@ struct FoodMenuScreen: View {
     // タブ要素をScrollに追従して動かす際に利用するNamespace Property Wrapper
     @Namespace private var animation
 
-    // Toolbar要素の背景色
-    private var toolbarBackgroundColor: Color {
-        Color(uiColor: UIColor(code: "#bf6301"))
-    }
-
     // 文字列を基準としてGeometryReaderから座標値を取得するにあたり、基準となる特定の文字列
     private let coordinateSpaceContentView = "CONTENTVIEW"
 
@@ -54,8 +49,13 @@ struct FoodMenuScreen: View {
 
     var body: some View {
         NavigationStack {
-            // フードメニュー要素一覧表示用View要素
-            FoodMenuScrollView()
+            VStack(spacing: 0.0) {
+                // フードメニュー要素一覧表示用View要素
+                FoodMenuScrollView()
+            }
+            // Navigation表示に関する設定
+            .navigationTitle("Food Menu")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 
@@ -92,12 +92,6 @@ struct FoodMenuScreen: View {
         }
         // 独自定義したModifier「.getRectangleViewToCoordinateSpace」に定めるための基準を設定する（※今回は特定の文字列を定める）
         .coordinateSpace(name: coordinateSpaceContentView)
-        // Navigation表示に関する設定
-        .navigationTitle("Food Menu")
-        .navigationBarTitleDisplayMode(.inline)
-        // Navigation表示の配色に関する設定
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(toolbarBackgroundColor, for: .navigationBar)
         // 要素全体が表示されたタイミングで実行される処理
         .onAppear {
             // TODO: Section毎にカテゴリー別のフードメニュー要素をまとめ直す
