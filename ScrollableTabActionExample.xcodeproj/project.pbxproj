@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */; };
+		DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */; };
 		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
 		DE61C94C2C2207EB0058FEEF /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = DE61C94B2C2207EB0058FEEF /* Testing */; };
 		DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRowView.swift; sourceTree = "<group>"; };
+		DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScreen.swift; sourceTree = "<group>"; };
 		DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollableTabActionExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabActionExampleTests.swift; sourceTree = "<group>"; };
 		DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRepository.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 				DE61C9562C25D9760058FEEF /* FoodMenuHeaderView.swift */,
 			);
 			path = FoodMenuComponents;
+			sourceTree = "<group>";
+		};
+		DE304D512D11A07E0085ABD0 /* ExampleScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */,
+			);
+			path = ExampleScreen;
 			sourceTree = "<group>";
 		};
 		DE61C9302C1205D30058FEEF /* ScrollableTabActionExampleTests */ = {
@@ -175,6 +185,7 @@
 		DEB414792BEA811200DEF655 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DE304D512D11A07E0085ABD0 /* ExampleScreen */,
 				DEB414872BEA89E100DEF655 /* FoodMenuScreen */,
 				DEB414862BEA899100DEF655 /* PremiumPosterScreen */,
 			);
@@ -390,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */,
+				DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */,
 				DE61C9532C24FD510058FEEF /* FoodMenuRequest.swift in Sources */,
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
 				DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */,

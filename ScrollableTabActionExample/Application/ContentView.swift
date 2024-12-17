@@ -24,7 +24,10 @@ struct ContentView: View {
                     }
                     .tag(0)
                 // FoodMenuScreenコンテンツ画面
-                FoodMenuScreen()
+                //FoodMenuScreen()
+                
+                // 検証用に載せ替えてみる
+                ExampleScreen()
                     .tabItem {
                         VStack {
                             Image(systemName: "fork.knife.circle.fill")
