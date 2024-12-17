@@ -77,4 +77,15 @@ struct FoodMenuModel: Hashable, Decodable {
         self.kcal = try container.decode(Int.self, forKey: .kcal)
         self.foodUrl = try container.decode(String.self, forKey: .foodUrl)
     }
+
+    // MARK: - Hashable
+
+    // MEMO: Hashableプロトコルに適合させるための処理
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: FoodMenuModel, rhs: FoodMenuModel) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
