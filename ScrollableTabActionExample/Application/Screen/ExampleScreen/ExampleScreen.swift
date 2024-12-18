@@ -11,6 +11,8 @@ import SwiftUI
 
 struct ExampleScreen: View {
 
+    // MARK: - `@State` Property
+
     /// View Properties
     @State private var activeTab: ProductType = .iphone
     @Namespace private var animation
