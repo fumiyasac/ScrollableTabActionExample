@@ -357,6 +357,7 @@
 			packageReferences = (
 				DE61C9492C2207DD0058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */,
 				DE24442F2C68AC2100379EB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				DE304D5B2D13FDE10085ABD0 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
 			);
 			productRefGroup = DEB414692BEA7D2300DEF655 /* Products */;
 			projectDirPath = "";
@@ -692,6 +693,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.1.1;
+			};
+		};
+		DE304D5B2D13FDE10085ABD0 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ScalingHeaderScrollView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.5;
 			};
 		};
 		DE61C9492C2207DD0058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */ = {
