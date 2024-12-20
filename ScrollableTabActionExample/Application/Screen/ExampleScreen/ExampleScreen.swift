@@ -18,9 +18,11 @@ struct ExampleScreen: View {
     @Namespace private var animation
     @State private var productsBasedOnType: [[Product]] = []
     @State private var animationProgress: CGFloat = 0
+
     /// Optional
     @State private var scrollableTabOffset: CGFloat = 0
     @State private var initialOffset: CGFloat = 0
+
     var body: some View {
         NavigationStack {
             
@@ -38,13 +40,6 @@ struct ExampleScreen: View {
                             ScrollableTabs(proxy)
                         }
                     }
-                    
-                    //                /// Comment Out, if you want to use LazyStack
-                    //                VStack(spacing: 15) {
-                    //                    ForEach(productsBasedOnType, id: \.self) { products in
-                    //                        ProductSectionView(products)
-                    //                    }
-                    //                }
                     .offset("CONTENTVIEW") { rect in
                         scrollableTabOffset = rect.minY - initialOffset
                     }
@@ -53,25 +48,11 @@ struct ExampleScreen: View {
                     Rectangle()
                         .fill(.white)
                 )
-                //            /// Comment Out, if you want to use LazyStack
-                //            .offset("CONTENTVIEW", completion: { rect in
-                //                initialOffset = rect.minY
-                //            })
-                //            .safeAreaInset(edge: .top) {
-                //                ScrollableTabs(proxy)
-                //                    .offset(y: scrollableTabOffset > 0 ? scrollableTabOffset : 0)
-                //            }
             }
             /// For Scroll Content Offset Detection
             .coordinateSpace(name: "CONTENTVIEW")
             .navigationBarTitle("Apple Store")
             .navigationBarTitleDisplayMode(.inline)
-            
-            /// Custom NavBar Background
-            //.toolbarBackground(.visible, for: .navigationBar)
-            //.toolbarBackground(Color("Purple"), for: .navigationBar)
-            /// Dark Scheme For NavBar
-            //.toolbarColorScheme(.light, for: .navigationBar)
             .background {
                 Rectangle()
                     .fill(.white)
@@ -88,7 +69,9 @@ struct ExampleScreen: View {
             }
         }
     }
-    
+
+    // MARK: - `@ViewBuilder` Private Function
+
     /// Products Sectioned View
     @ViewBuilder
     func ProductSectionView(_ products: [Product]) -> some View {
@@ -118,7 +101,7 @@ struct ExampleScreen: View {
             }
         }
     }
-    
+
     /// Product Row View
     @ViewBuilder
     func ProductRowView(_ product: Product) -> some View {
@@ -186,9 +169,9 @@ struct ExampleScreen: View {
                 }
             }
             .padding(.vertical, 12)
-            .onChange(of: activeTab) { newValue in
+            .onChange(of: activeTab) {
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    proxy.scrollTo(newValue.tabID, anchor: .center)
+                    proxy.scrollTo(activeTab.tabID, anchor: .center)
                 }
             }
             .checkAnimationEnd(for: animationProgress) {
@@ -197,12 +180,6 @@ struct ExampleScreen: View {
             }
         }
         .background(.white)
-//        .background {
-//            Rectangle()
-//                .fill(Color("Purple"))
-//                .padding(.top, -100)
-//                .shadow(color: .black.opacity(0.2), radius: 5, x: 5, y: 5)
-//        }
     }
 }
 
