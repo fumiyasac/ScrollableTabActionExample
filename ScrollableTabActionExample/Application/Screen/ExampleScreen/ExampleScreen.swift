@@ -23,6 +23,12 @@ struct ExampleScreen: View {
     @State private var scrollableTabOffset: CGFloat = 0
     @State private var initialOffset: CGFloat = 0
 
+    // MARK: - Initializer
+
+    init() {}
+
+    // MARK: - Body
+
     var body: some View {
         NavigationStack {
             
