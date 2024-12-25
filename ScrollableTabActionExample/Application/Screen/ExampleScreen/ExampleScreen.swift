@@ -46,7 +46,7 @@ struct ExampleScreen: View {
                             ScrollableTabs(proxy)
                         }
                     }
-                    .offset("CONTENTVIEW") { rect in
+                    .getRectangleViewToCoordinateSpace("CONTENTVIEW") { rect in
                         scrollableTabOffset = rect.minY - initialOffset
                     }
                 }
@@ -96,7 +96,7 @@ struct ExampleScreen: View {
         .padding(15)
         /// - For Auto Scrolling VIA ScrollViewProxy
         .id(products.type)
-        .offset("CONTENTVIEW") { rect in
+        .getRectangleViewToCoordinateSpace("CONTENTVIEW") { rect in
             let minY = rect.minY
             /// When the Content Reaches it's top then updating the current active Tab
             if (minY < 30 && -minY < (rect.midY / 2) && activeTab != products.type) && animationProgress == 0 {
@@ -180,7 +180,7 @@ struct ExampleScreen: View {
                     proxy.scrollTo(activeTab.tabID, anchor: .center)
                 }
             }
-            .checkAnimationEnd(for: animationProgress) {
+            .checkAnimationCompleted(for: animationProgress) {
                 /// Reseting to Default, when the animation was finished
                 animationProgress = 0.0
             }
