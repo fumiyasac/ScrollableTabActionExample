@@ -1,15 +1,6 @@
 {
-  "originHash" : "2e92929cf5e675c3869bea67280d2ada01f0528f850ca50d1f2d86e1dd9a9cf7",
+  "originHash" : "4afe3317e0d15d2489436da7b7a4d73a0275f042e903c27b0a4897e00b1c9084",
   "pins" : [
-    {
-      "identity" : "scalingheaderscrollview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/exyte/ScalingHeaderScrollView",
-      "state" : {
-        "revision" : "87cc269444490be1ba231038718267aceca1f895",
-        "version" : "1.1.5"
-      }
-    },
     {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
@@ -26,33 +17,6 @@
       "state" : {
         "revision" : "451c6dfd5ecec2cf626d1d9ca81c2d4a60355172",
         "version" : "3.1.3"
-      }
-    },
-    {
-      "identity" : "swift-syntax",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-syntax.git",
-      "state" : {
-        "revision" : "0687f71944021d616d34d922343dcef086855920",
-        "version" : "600.0.1"
-      }
-    },
-    {
-      "identity" : "swift-testing",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-testing.git",
-      "state" : {
-        "revision" : "399f76dcd91e4c688ca2301fa24a8cc6d9927211",
-        "version" : "0.99.0"
-      }
-    },
-    {
-      "identity" : "swiftui-introspect",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/siteline/swiftui-introspect",
-      "state" : {
-        "revision" : "807f73ce09a9b9723f12385e592b4e0aaebd3336",
-        "version" : "1.3.0"
       }
     }
   ],

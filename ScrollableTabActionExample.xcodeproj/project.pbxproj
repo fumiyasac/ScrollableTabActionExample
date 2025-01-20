@@ -10,7 +10,6 @@
 		DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */; };
 		DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */; };
 		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
-		DE61C94C2C2207EB0058FEEF /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = DE61C94B2C2207EB0058FEEF /* Testing */; };
 		DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */; };
 		DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */; };
 		DE61C9532C24FD510058FEEF /* FoodMenuRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9522C24FD510058FEEF /* FoodMenuRequest.swift */; };
@@ -88,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE61C94C2C2207EB0058FEEF /* Testing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +299,6 @@
 			);
 			name = ScrollableTabActionExampleTests;
 			packageProductDependencies = (
-				DE61C94B2C2207EB0058FEEF /* Testing */,
 			);
 			productName = ScrollableTabActionExampleTests;
 			productReference = DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */;
@@ -355,9 +352,7 @@
 			);
 			mainGroup = DEB4145F2BEA7D2300DEF655;
 			packageReferences = (
-				DE61C9492C2207DD0058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */,
 				DE24442F2C68AC2100379EB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				DE304D5B2D13FDE10085ABD0 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
 			);
 			productRefGroup = DEB414692BEA7D2300DEF655 /* Products */;
 			projectDirPath = "";
@@ -695,31 +690,7 @@
 				minimumVersion = 3.1.1;
 			};
 		};
-		DE304D5B2D13FDE10085ABD0 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/ScalingHeaderScrollView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.5;
-			};
-		};
-		DE61C9492C2207DD0058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-testing.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DE61C94B2C2207EB0058FEEF /* Testing */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE61C9492C2207DD0058FEEF /* XCRemoteSwiftPackageReference "swift-testing" */;
-			productName = Testing;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEB414602BEA7D2300DEF655 /* Project object */;
 }
