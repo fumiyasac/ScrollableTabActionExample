@@ -50,7 +50,7 @@ final class ApiClientManager {
     // MARK: - Properties
 
     // MEMO: API ServerへのURLに関する情報
-    private static let host = "http://localhost:3000"
+    private static let host = "http://localhost:3001"
 
     // MARK: - Function
 

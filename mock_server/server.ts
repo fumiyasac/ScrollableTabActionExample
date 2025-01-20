@@ -15,13 +15,22 @@ const router = jsonServer.router('db/db.json');
 // 各種設定用
 const middlewares = jsonServer.defaults();
 
+// ルーティングを変更する
+const rewriteRules = jsonServer.rewriter({
+	"/v1/premium_posters" : "/premium_posters",
+    "/v1/food_menus " : "/food_menus",
+});
+
+// リクエストのルールを設定する
+server.use(rewriteRules);
+
 // ミドルウェアを設定する (※コンソール出力するロガーやキャッシュの設定等)
 server.use(middlewares);
 
 // ルーティングを設定する
 server.use(router);
 
-// サーバをポート3000で起動する
-server.listen(3000, () => {
+// サーバをポート3001で起動する
+server.listen(3001, () => {
     console.log('ScrollableTabActionExample Mock Server is running...');
 });
