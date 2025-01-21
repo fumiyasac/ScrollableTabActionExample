@@ -12,8 +12,6 @@
 		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
 		DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */; };
 		DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */; };
-		DE61C9532C24FD510058FEEF /* FoodMenuRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9522C24FD510058FEEF /* FoodMenuRequest.swift */; };
-		DE61C9552C24FD610058FEEF /* PremiumPosterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9542C24FD610058FEEF /* PremiumPosterRequest.swift */; };
 		DE61C9572C25D9760058FEEF /* FoodMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9562C25D9760058FEEF /* FoodMenuHeaderView.swift */; };
 		DE64D28A2C0778170065D0F3 /* OffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */; };
 		DE64D28C2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */; };
@@ -55,8 +53,6 @@
 		DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabActionExampleTests.swift; sourceTree = "<group>"; };
 		DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRepository.swift; sourceTree = "<group>"; };
 		DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterRepository.swift; sourceTree = "<group>"; };
-		DE61C9522C24FD510058FEEF /* FoodMenuRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRequest.swift; sourceTree = "<group>"; };
-		DE61C9542C24FD610058FEEF /* PremiumPosterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterRequest.swift; sourceTree = "<group>"; };
 		DE61C9562C25D9760058FEEF /* FoodMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuHeaderView.swift; sourceTree = "<group>"; };
 		DE64D2892C0778170065D0F3 /* OffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		DE64D28B2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollingTabsExtension.swift; sourceTree = "<group>"; };
@@ -132,13 +128,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE61C9512C24FD080058FEEF /* Request */ = {
+		DE61C9512C24FD080058FEEF /* Testing */ = {
 			isa = PBXGroup;
 			children = (
-				DE61C9522C24FD510058FEEF /* FoodMenuRequest.swift */,
-				DE61C9542C24FD610058FEEF /* PremiumPosterRequest.swift */,
 			);
-			path = Request;
+			path = Testing;
 			sourceTree = "<group>";
 		};
 		DEB4145F2BEA7D2300DEF655 = {
@@ -198,7 +192,7 @@
 				DEB414A12BF7071300DEF655 /* Infrastructure */,
 				DEB4148C2BEC2B1600DEF655 /* Model */,
 				DEB414A02BF7070900DEF655 /* Repository */,
-				DE61C9512C24FD080058FEEF /* Request */,
+				DE61C9512C24FD080058FEEF /* Testing */,
 				DEB414792BEA811200DEF655 /* Screen */,
 				DEB4148D2BEC2B2F00DEF655 /* ViewStateProvider */,
 			);
@@ -398,7 +392,6 @@
 			files = (
 				DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */,
 				DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */,
-				DE61C9532C24FD510058FEEF /* FoodMenuRequest.swift in Sources */,
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
 				DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */,
 				DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */,
@@ -408,7 +401,6 @@
 				DEB4146E2BEA7D2300DEF655 /* ContentView.swift in Sources */,
 				DEB414A32BF7073600DEF655 /* ApiClientManager.swift in Sources */,
 				DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */,
-				DE61C9552C24FD610058FEEF /* PremiumPosterRequest.swift in Sources */,
 				DEB4148B2BEA89FB00DEF655 /* PremiumPosterScreen.swift in Sources */,
 				DE64D28A2C0778170065D0F3 /* OffsetPreferenceKey.swift in Sources */,
 				DEB414892BEA89F200DEF655 /* FoodMenuScreen.swift in Sources */,
