@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */; };
+		DE1DC9B12D3F872E00873A8B /* food_menus.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1DC9AF2D3F872E00873A8B /* food_menus.json */; };
+		DE1DC9B22D3F872E00873A8B /* premium_posters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1DC9B02D3F872E00873A8B /* premium_posters.json */; };
 		DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */; };
 		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
 		DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRowView.swift; sourceTree = "<group>"; };
+		DE1DC9AF2D3F872E00873A8B /* food_menus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = food_menus.json; sourceTree = "<group>"; };
+		DE1DC9B02D3F872E00873A8B /* premium_posters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = premium_posters.json; sourceTree = "<group>"; };
 		DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScreen.swift; sourceTree = "<group>"; };
 		DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollableTabActionExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabActionExampleTests.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 		DE61C9512C24FD080058FEEF /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				DE1DC9AF2D3F872E00873A8B /* food_menus.json */,
+				DE1DC9B02D3F872E00873A8B /* premium_posters.json */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -371,6 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB414732BEA7D2400DEF655 /* Preview Assets.xcassets in Resources */,
+				DE1DC9B12D3F872E00873A8B /* food_menus.json in Resources */,
+				DE1DC9B22D3F872E00873A8B /* premium_posters.json in Resources */,
 				DEB414702BEA7D2400DEF655 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
