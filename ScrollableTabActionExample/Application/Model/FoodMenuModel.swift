@@ -14,21 +14,31 @@ struct FoodMenuModel: Hashable, Decodable {
     let id: Int
     let name: String
     let category: FoodMenuModel.FoodMenuCategeory
-    let dish: String
+    let dish: FoodMenuModel.FoodMenuDish
     let price: Int
     let kcal: Int
-    let foodUrl: String
+    let thumbnail: String
 
     // MARK: - Enum
 
     enum FoodMenuCategeory: String, CaseIterable {
-        case fish = "🍛カレー"
-        case steak = "🥩ステーキ"
-        case chinese = "🍜中華料理"
-        case pasta = "🍝パスタ"
-        case sushi = "🍣お寿司"
-        case western = "🍔洋食"
-        case japanese = "🍲和食"
+        case fish = "🐟魚料理"
+        case meat = "🥩肉料理"
+        case noodle = "🍝麺類"
+        case rice = "🌾米"
+        case vegetable = "🥦野菜料理"
+        case dessert = "🍨デザート"
+        case bread = "🍞パン"
+        case seaweed = "🌊海藻"
+        case soup = "🍲スープ"
+    }
+
+    enum FoodMenuDish: String, CaseIterable {
+        case mainDish = "主菜"
+        case subDish = "副菜"
+        case stapleFood = "主食"
+        case soup = "汁物"
+        case sweets = "甘味"
     }
 
     // MARK: - Enum
@@ -36,11 +46,11 @@ struct FoodMenuModel: Hashable, Decodable {
     private enum Keys: String, CodingKey {
         case id
         case name
-        case category
-        case dish
+        case category = "categorySlug"
+        case dish = "dishType"
         case price
         case kcal
-        case foodUrl = "food_url"
+        case thumbnail
     }
 
     // MARK: - Initializer
@@ -52,15 +62,15 @@ struct FoodMenuModel: Hashable, Decodable {
         dish: String,
         price: Int,
         kcal: Int,
-        foodUrl: String
+        thumbnail: String
     ) {
         self.id = id
         self.name = name
-        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .sushi
-        self.dish = dish
+        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .meat
+        self.dish = FoodMenuModel.FoodMenuDish(rawValue: dish) ?? .mainDish
         self.price = price
         self.kcal = kcal
-        self.foodUrl = foodUrl
+        self.thumbnail = thumbnail
     }
 
     init(from decoder: Decoder) throws {
@@ -71,11 +81,11 @@ struct FoodMenuModel: Hashable, Decodable {
         // JSONの配列内の要素にある値をDecodeして初期化する
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: try container.decode(String.self, forKey: .category)) ?? .sushi
-        self.dish = try container.decode(String.self, forKey: .dish)
+        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: try container.decode(String.self, forKey: .category)) ?? .meat
+        self.dish = FoodMenuModel.FoodMenuDish(rawValue: try container.decode(String.self, forKey: .dish)) ?? .mainDish
         self.price = try container.decode(Int.self, forKey: .price)
         self.kcal = try container.decode(Int.self, forKey: .kcal)
-        self.foodUrl = try container.decode(String.self, forKey: .foodUrl)
+        self.thumbnail = try container.decode(String.self, forKey: .thumbnail)
     }
 
     // MARK: - Hashable
