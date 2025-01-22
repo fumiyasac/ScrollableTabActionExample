@@ -9,6 +9,10 @@ import SwiftUI
 
 struct PremiumPosterScreen: View {
 
+    // MARK: - ViewStateProvider
+
+    private var premiumPosterViewStateProvider: PremiumPosterViewStateProvider
+
     // MARK: - `@State` Property
 
     // 配置対象のTab要素全てを格納する変数
@@ -29,23 +33,11 @@ struct PremiumPosterScreen: View {
     // 任意のTab要素タップ時からAnimation動作中に表示する連打防止用矩形エリア表示フラグ
     @State private var showRectangleToPreventRepeatedHits: Bool
 
-    // MARK: - Computed Property
-
-    private var tabNameFont: Font {
-        Font.custom("AvenirNext-Bold", size: 13.0)
-    }
-
-    private var tabUnderlineActiveColor: Color {
-        Color(uiColor: UIColor(code: "#bf6301"))
-    }
-
-    private var tabUnderlineNormalColor: Color {
-        .gray.opacity(0.5)
-    }
-
     // MARK: - Initializer
 
     init() {
+        // PremiumPosterViewStateProviderの初期化する
+        premiumPosterViewStateProvider = PremiumPosterViewStateProviderImpl()
         // `@State`で定義するものの初期値を設定する
         _tabs = State(initialValue: PosterLineupModel.Tab.allCases.map { .init(id: $0) })
         _activeTab = State(initialValue: .premiumDinner1)
@@ -68,6 +60,9 @@ struct PremiumPosterScreen: View {
             // Navigation表示に関する設定
             .navigationTitle("Premium Poster")
             .navigationBarTitleDisplayMode(.inline)
+            .onFirstAppear {
+                premiumPosterViewStateProvider.fetchPremiumPosters()
+            }
         }
     }
 
@@ -88,12 +83,13 @@ struct PremiumPosterScreen: View {
                 // 横一列にタブ要素分だけ対応するコンテンツ要素を並べる
                 LazyHStack(spacing: 0.0) {
                     ForEach(tabs) { tab in
-                        // ForEach内部の配置要素にGeometryReaderから算出した幅と高さを設定する
-
-                        // TODO: コンテンツ要素用のView要素を作成する
-                        Text(tab.id.rawValue)
-                            .frame(width: targetSize.width, height: targetSize.height)
-                            .contentShape(.rect)
+                        if let premiumPosterModel = getPremiumPosterModel(tab: tab) {
+                            PremiumPosterSliderView(premiumPosterModel: premiumPosterModel, targetSize: targetSize)
+                        } else {
+                            Text(tab.id.rawValue)
+                                .frame(width: targetSize.width, height: targetSize.height)
+                                .contentShape(.rect)
+                        }
                     }
                 }
                 .scrollTargetLayout()
@@ -120,6 +116,41 @@ struct PremiumPosterScreen: View {
                 }
             }
         }
+    }
+
+    private func getPremiumPosterModel(tab: PosterLineupModel) -> PremiumPosterModel? {
+        premiumPosterViewStateProvider.premiumPosterModels.first(where: { $0.tab == tab.id })
+    }
+
+    @ViewBuilder
+    private func PremiumPosterSliderView(premiumPosterModel: PremiumPosterModel, targetSize: CGSize) -> some View {
+        // ForEach内部の配置要素にGeometryReaderから算出した幅と高さを設定する
+        ZStack {
+            PremiumPosterThumbnailView(premiumPosterModel: premiumPosterModel)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(premiumPosterModel.title)
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.white)
+                        .lineLimit(3)
+                    Text(premiumPosterModel.subTitle)
+                        .font(.body)
+                        .foregroundColor(.white)
+                        .lineLimit(5)
+                        .padding(.top, 8.0)
+                    Text("[予算]: ¥\(premiumPosterModel.price)")
+                        .font(.body)
+                        .bold()
+                        .foregroundColor(.white)
+                        .lineLimit(5)
+                        .padding(.top, 8.0)
+                }
+                Spacer()
+            }
+            .padding(32.0)
+        }
+        .frame(width: targetSize.width, height: targetSize.height)
     }
 
     @ViewBuilder
@@ -152,10 +183,10 @@ struct PremiumPosterScreen: View {
                             // Tab要素配置用テキストを設定する
                             // 👉 余談: 「.vertical = 12.0」をしているのは高さを調整するため
                             Text(tab.id.rawValue)
-                                .font(tabNameFont)
+                                .font(.footnote)
                                 .fontWeight(.medium)
                                 .padding(.vertical, 12.0)
-                                .foregroundStyle(activeTab == tab.id ? tabUnderlineActiveColor : .gray)
+                                .foregroundStyle(activeTab == tab.id ? Color(uiColor: UIColor(code: "#bf6301")) : .gray)
                                 .contentShape(.rect)
                         }
                         .buttonStyle(.plain)
@@ -187,8 +218,8 @@ struct PremiumPosterScreen: View {
                 // 左右のpadding外にグレーの下線要素を配置する
                 // 👉 .padding(.horizontal, -16.0) ＆ .safeAreaPadding(.horizontal, 16.0) でセットで考える
                 Rectangle()
-                    .fill(tabUnderlineNormalColor)
-                    .frame(height: 1.0)
+                    .fill(.gray.opacity(0.5))
+                    .frame(height: 3.0)
                     .padding(.horizontal, -16.0)
                 // Tab要素のindex値をArrayに変換する
                 let inputRange = tabs.indices.compactMap { targetRange in
@@ -216,8 +247,8 @@ struct PremiumPosterScreen: View {
                 // 👉 X軸方向のOffset値の変数「indicatorPosition」を適用する
                 // 👉 Contents要素を動かした割合を表す変数「progress」を利用して計算した値を反映する点がポイント
                 Rectangle()
-                    .fill(tabUnderlineActiveColor)
-                    .frame(width: indicatorWidth, height: 1.5)
+                    .fill(Color(uiColor: UIColor(code: "#bf6301")))
+                    .frame(width: indicatorWidth, height: 3.0)
                     .offset(x: indicatorPosition)
             }
         }

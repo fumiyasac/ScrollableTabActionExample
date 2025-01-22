@@ -9,13 +9,26 @@ import SwiftUI
 
 struct PremiumPosterThumbnailView: View {
 
+    // MARK: - Property
+
+    private var premiumPosterModel: PremiumPosterModel
+
+    // MARK: - Initializer
+
+    init(premiumPosterModel: PremiumPosterModel) {
+        self.premiumPosterModel = premiumPosterModel
+    }
+
     // MARK: - Body
 
     var body: some View {
         ZStack {
-            // TODO: コンテンツ要素用のView要素を作成する
-            // 雑誌アプリの様なUI実装を今後試してみる方針を考えてみる
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Image(premiumPosterModel.posterIdentifier)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .clipped()
+            Rectangle()
+                .foregroundColor(.black.opacity(0.48))
         }
     }
 }
@@ -23,5 +36,14 @@ struct PremiumPosterThumbnailView: View {
 // MARK: - Preview
 
 #Preview {
-    PremiumPosterThumbnailView()
+    PremiumPosterThumbnailView(
+        premiumPosterModel: PremiumPosterModel(
+            id: 1,
+            tab: "プレミアムディナーNo.1",
+            title: "イタリアンをベースとした本格的なコースをお楽しみ下さい！",
+            subTitle: "海の幸・山の幸をバランス良く取り入れた合計8品ラインナップ。ワインと一緒に特別な時間を過ごしてみて下さい。",
+            price: 8000,
+            posterIdentifier: "premium_dinner_1"
+        )
+    )
 }

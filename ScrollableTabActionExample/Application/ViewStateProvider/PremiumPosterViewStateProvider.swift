@@ -12,8 +12,9 @@ import Observation
 
 protocol PremiumPosterViewStateProvider {
 
+    var isLoading: Bool { get }
+    var errorMessage: String? { get }
     var premiumPosterModels: [PremiumPosterModel] { get }
-
     func fetchPremiumPosters()
 }
 
@@ -22,11 +23,45 @@ protocol PremiumPosterViewStateProvider {
 @Observable
 public final class PremiumPosterViewStateProviderImpl: PremiumPosterViewStateProvider {
 
-    // MARK: - Property
+    // MARK: - Property (Dependency)
 
-    private (set)var premiumPosterModels: [PremiumPosterModel] = []
+    private let premiumPosterRepository: PremiumPosterRepository
+
+    // MARK: - Property (Computed)
+
+    private var _isLoading: Bool = false
+    private var _errorMessage: String?
+    private var _premiumPosterModels: [PremiumPosterModel] = []
+
+    // MARK: - Property (`@Observable`)
+
+    var isLoading: Bool {
+        _isLoading
+    }
+
+    var errorMessage: String? {
+        _errorMessage
+    }
+
+    var premiumPosterModels: [PremiumPosterModel] {
+        _premiumPosterModels
+    }
+
+    // MARK: - Initializer
+
+    init(premiumPosterRepository: PremiumPosterRepository = PremiumPosterRepositoryImpl()) {
+        self.premiumPosterRepository = premiumPosterRepository
+    }
 
     // MARK: - Function
 
-    func fetchPremiumPosters() {}
+    func fetchPremiumPosters() {
+        Task { @MainActor in
+            do {
+                _premiumPosterModels = try await premiumPosterRepository.getAll()
+            } catch let error {
+                print(error)
+            }
+        }
+    }
 }
