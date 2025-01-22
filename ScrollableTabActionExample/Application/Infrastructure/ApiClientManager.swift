@@ -23,8 +23,8 @@ enum HTTPMethod {
 // MARK: - Protocol
 
 protocol APIClientManagerProtocol {
-    
-    // MEMO: APIClientManagerはasync/awaitを利用して書く
+    func getAllPremiumPoster() async throws -> [PremiumPosterModel]
+    func getAllFoodMenu() async throws -> [FoodMenuModel]
 }
 
 final class ApiClientManager {
@@ -40,7 +40,7 @@ final class ApiClientManager {
     private enum EndPoint: String {
 
         case foodMenus = "food_menus"
-        case PremiumPosters = "premium_posters"
+        case premiumPosters = "premium_posters"
 
         func getBaseUrl() -> String {
             return [host, version, self.rawValue].joined(separator: "/")
@@ -174,4 +174,23 @@ final class ApiClientManager {
 
 // MARK: - ApiClientManagerProtocol
 
-extension ApiClientManager: APIClientManagerProtocol {}
+extension ApiClientManager: APIClientManagerProtocol {
+
+    // MARK: - Function
+
+    func getAllPremiumPoster() async throws -> [PremiumPosterModel] {
+        try await executeAPIRequest(
+            endpointUrl: EndPoint.premiumPosters.getBaseUrl(),
+            httpMethod: .GET,
+            responseFormat: [PremiumPosterModel].self
+        )
+    }
+
+    func getAllFoodMenu() async throws -> [FoodMenuModel] {
+        try await executeAPIRequest(
+            endpointUrl: EndPoint.foodMenus.getBaseUrl(),
+            httpMethod: .GET,
+            responseFormat: [FoodMenuModel].self
+        )
+    }
+}
