@@ -255,9 +255,3 @@ struct PremiumPosterScreen: View {
         .safeAreaPadding(.horizontal, 16.0)
     }
 }
-
-// MARK: - Preview
-
-#Preview {
-    PremiumPosterScreen()
-}
