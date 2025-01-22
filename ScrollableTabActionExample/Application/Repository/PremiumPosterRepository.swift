@@ -16,6 +16,6 @@ final class PremiumPosterRepositoryImpl: PremiumPosterRepository {
     // MARK: - Function
 
     func getAll() async throws -> [PremiumPosterModel] {
-        []
+        try await ApiClientManager.shared.getAllPremiumPoster()
     }
 }

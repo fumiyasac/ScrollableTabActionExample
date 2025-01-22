@@ -16,6 +16,6 @@ final class FoodMenuRepositoryImpl: FoodMenuRepository {
     // MARK: - Function
 
     func getAll() async throws -> [FoodMenuModel] {
-        []
+        try await ApiClientManager.shared.getAllFoodMenu()
     }
 }
