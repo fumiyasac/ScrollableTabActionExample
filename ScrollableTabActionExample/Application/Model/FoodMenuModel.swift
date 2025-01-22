@@ -66,7 +66,7 @@ struct FoodMenuModel: Hashable, Decodable {
     ) {
         self.id = id
         self.name = name
-        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .meat
+        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .fish
         self.dish = FoodMenuModel.FoodMenuDish(rawValue: dish) ?? .mainDish
         self.price = price
         self.kcal = kcal

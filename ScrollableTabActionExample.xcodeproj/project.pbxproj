@@ -10,6 +10,7 @@
 		DE17390C2C06101000C13BCB /* FoodMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17390B2C06101000C13BCB /* FoodMenuRowView.swift */; };
 		DE1DC9B12D3F872E00873A8B /* food_menus.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1DC9AF2D3F872E00873A8B /* food_menus.json */; };
 		DE1DC9B22D3F872E00873A8B /* premium_posters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1DC9B02D3F872E00873A8B /* premium_posters.json */; };
+		DE1DC9B42D413CF900873A8B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE1DC9B32D413CF900873A8B /* SDWebImageSwiftUI */; };
 		DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */; };
 		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
 		DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */; };
@@ -94,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1DC9B42D413CF900873A8B /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +320,7 @@
 			);
 			name = ScrollableTabActionExample;
 			packageProductDependencies = (
+				DE1DC9B32D413CF900873A8B /* SDWebImageSwiftUI */,
 			);
 			productName = ScrollableTabActionExample;
 			productReference = DEB414682BEA7D2300DEF655 /* ScrollableTabActionExample.app */;
@@ -691,6 +694,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE1DC9B32D413CF900873A8B /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE24442F2C68AC2100379EB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEB414602BEA7D2300DEF655 /* Project object */;
 }
