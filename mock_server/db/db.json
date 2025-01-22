@@ -40,10 +40,10 @@
         "id": 5,
         "poster_id": 5,
         "tab": "クリスマス用ローストチキン",
-        "title": "当店一番おすすめのラム肉のローストをご堪能あれ！",
-        "sub_title": "じっくり丁寧に焼き上げたラム肉の味わいはワインが進むこと間違いなし！特別な日を華麗に演出してくれることでしょう。",
+        "title": "クリスマスといえば大きなローストチキンが定番！",
+        "sub_title": "フランス産のブレス鶏を使ったローストチキンで、大切な人と一緒にプレミアムな時間をお過ごし下さい！",
         "price": 10000,
-        "poster_identifier": "premium_dinner_2"
+        "poster_identifier": "christmas_chicken"
       },
       {
         "id": 6,
@@ -88,7 +88,7 @@
         "title": "じっくり丁寧に焼き上げた当店自慢のローストビーフです！",
         "sub_title": "冷めても美味しく召し上がれる工夫を凝らした、プレミアムなローストビーフを心ゆくまでご堪能ください！",
         "price": 10000,
-        "poster_identifier": "alcohol_snacks"
+        "poster_identifier": "roast_beef"
       }
     ],
     "food_menus": [
