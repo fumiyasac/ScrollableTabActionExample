@@ -22,23 +22,48 @@ struct FoodMenuModel: Hashable, Decodable {
     // MARK: - Enum
 
     enum FoodMenuCategeory: String, CaseIterable {
-        case fish = "🐟魚料理"
-        case meat = "🥩肉料理"
-        case noodle = "🍝麺類"
-        case rice = "🌾米"
-        case vegetable = "🥦野菜料理"
-        case dessert = "🍨デザート"
-        case bread = "🍞パン"
-        case seaweed = "🌊海藻"
-        case soup = "🍲スープ"
+
+        case fish
+        case meat
+        case noodle
+        case rice
+        case vegetable
+        case dessert
+        case bread
+        case seaweed
+        case soup
+
+        var title: String {
+            switch self {
+            case .fish: return "🐟魚料理"
+            case .meat: return "🥩肉料理"
+            case .noodle: return "🍝麺類"
+            case .rice: return "🌾米"
+            case .vegetable: return "🥦野菜料理"
+            case .dessert: return "🍨デザート"
+            case .bread: return "🍞パン"
+            case .seaweed: return "🌊海藻"
+            case .soup: return "🍲スープ"
+            }
+        }
     }
 
     enum FoodMenuDish: String, CaseIterable {
-        case mainDish = "主菜"
-        case subDish = "副菜"
-        case stapleFood = "主食"
-        case soup = "汁物"
-        case sweets = "甘味"
+        case mainDish = "main_dish"
+        case subDish = "sub_dish"
+        case stapleFood = "staple_food"
+        case soup = "soup"
+        case sweets = "sweets"
+
+        var title: String {
+            switch self {
+            case .mainDish: return "主菜"
+            case .subDish: return "副菜"
+            case .stapleFood: return "主食"
+            case .soup: return "汁物"
+            case .sweets: return "甘味"
+            }
+        }
     }
 
     // MARK: - Enum
@@ -66,7 +91,7 @@ struct FoodMenuModel: Hashable, Decodable {
     ) {
         self.id = id
         self.name = name
-        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .fish
+        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .meat
         self.dish = FoodMenuModel.FoodMenuDish(rawValue: dish) ?? .mainDish
         self.price = price
         self.kcal = kcal

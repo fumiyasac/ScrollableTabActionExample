@@ -52,7 +52,7 @@ struct FoodMenuRowView: View {
                         .bold()
                         .foregroundColor(.primary)
                     // 2-(2). フィルター項目(カテゴリーや区分)
-                    Text(foodMenuModel.dish.rawValue + " / " + foodMenuModel.category.rawValue)
+                    Text(foodMenuModel.dish.title + " / " + foodMenuModel.category.title)
                         .font(.caption)
                         .foregroundColor(.gray)
                         .padding(.top, 4.0)
