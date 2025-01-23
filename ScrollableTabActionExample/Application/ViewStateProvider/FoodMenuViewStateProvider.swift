@@ -8,5 +8,58 @@
 import Foundation
 import Observation
 
+// MARK: - Protocol
+
+protocol FoodMenuViewStateProvider {
+    var isLoading: Bool { get }
+    var errorMessage: String? { get }
+    var foodMenuModels: [FoodMenuModel] { get }
+    func fetchFoodMenus()
+}
+
+
 @Observable
-public final class FoodMenuViewStateProvider {}
+public final class FoodMenuViewStateProviderImpl: FoodMenuViewStateProvider {
+
+    // MARK: - Property (Dependency)
+
+    private let foodMenuRepository: FoodMenuRepository
+
+    // MARK: - Property (Computed)
+
+    private var _isLoading: Bool = false
+    private var _errorMessage: String?
+    private var _foodMenuModels: [FoodMenuModel] = []
+
+    // MARK: - Property (`@Observable`)
+
+    var isLoading: Bool {
+        _isLoading
+    }
+
+    var errorMessage: String? {
+        _errorMessage
+    }
+    
+    var foodMenuModels: [FoodMenuModel] {
+        _foodMenuModels
+    }
+
+    // MARK: - Initializer
+
+    init(foodMenuRepository: FoodMenuRepository = FoodMenuRepositoryImpl()) {
+        self.foodMenuRepository = foodMenuRepository
+    }
+
+    // MARK: - Function
+
+    func fetchFoodMenus() {
+        Task { @MainActor in
+            do {
+                _foodMenuModels = try await foodMenuRepository.getAll()
+            } catch let error {
+                print(error)
+            }
+        }
+    }
+}
