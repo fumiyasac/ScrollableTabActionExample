@@ -26,7 +26,7 @@
 		DEB4147F2BEA85EC00DEF655 /* FirstAppearExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4147E2BEA85EC00DEF655 /* FirstAppearExtension.swift */; };
 		DEB414832BEA868100DEF655 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414822BEA868100DEF655 /* ColorExtension.swift */; };
 		DEB414852BEA869100DEF655 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414842BEA869000DEF655 /* UIColorExtension.swift */; };
-		DEB414892BEA89F200DEF655 /* FoodMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414882BEA89F200DEF655 /* FoodMenuScreen.swift */; };
+		DEB414892BEA89F200DEF655 /* FoodMenuScreenBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414882BEA89F200DEF655 /* FoodMenuScreenBack.swift */; };
 		DEB4148B2BEA89FB00DEF655 /* PremiumPosterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4148A2BEA89FB00DEF655 /* PremiumPosterScreen.swift */; };
 		DEB4148F2BEC2BC200DEF655 /* PosterLineupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */; };
 		DEB414922BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */; };
@@ -70,7 +70,7 @@
 		DEB4147E2BEA85EC00DEF655 /* FirstAppearExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppearExtension.swift; sourceTree = "<group>"; };
 		DEB414822BEA868100DEF655 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		DEB414842BEA869000DEF655 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		DEB414882BEA89F200DEF655 /* FoodMenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuScreen.swift; sourceTree = "<group>"; };
+		DEB414882BEA89F200DEF655 /* FoodMenuScreenBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuScreenBack.swift; sourceTree = "<group>"; };
 		DEB4148A2BEA89FB00DEF655 /* PremiumPosterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPosterScreen.swift; sourceTree = "<group>"; };
 		DEB4148E2BEC2BC200DEF655 /* PosterLineupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterLineupModel.swift; sourceTree = "<group>"; };
 		DEB414912BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuViewStateProvider.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				DE17390A2C03EB5300C13BCB /* FoodMenuComponents */,
-				DEB414882BEA89F200DEF655 /* FoodMenuScreen.swift */,
+				DEB414882BEA89F200DEF655 /* FoodMenuScreenBack.swift */,
 			);
 			path = FoodMenuScreen;
 			sourceTree = "<group>";
@@ -414,7 +414,7 @@
 				DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */,
 				DEB4148B2BEA89FB00DEF655 /* PremiumPosterScreen.swift in Sources */,
 				DE64D28A2C0778170065D0F3 /* OffsetPreferenceKey.swift in Sources */,
-				DEB414892BEA89F200DEF655 /* FoodMenuScreen.swift in Sources */,
+				DEB414892BEA89F200DEF655 /* FoodMenuScreenBack.swift in Sources */,
 				DEB414832BEA868100DEF655 /* ColorExtension.swift in Sources */,
 				DEB414922BEC2F3100DEF655 /* FoodMenuViewStateProvider.swift in Sources */,
 				DE64D28C2C0778CD0065D0F3 /* AutoScrollingTabsExtension.swift in Sources */,

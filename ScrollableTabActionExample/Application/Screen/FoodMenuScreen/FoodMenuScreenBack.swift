@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoodMenuScreen: View {
+struct FoodMenuScreenBack: View {
 
     // MARK: - `@State` Property
 
@@ -113,5 +113,5 @@ struct FoodMenuScreen: View {
 // MARK: - Preview
 
 #Preview {
-    FoodMenuScreen()
+    FoodMenuScreenBack()
 }
