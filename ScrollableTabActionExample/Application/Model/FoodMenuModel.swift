@@ -47,6 +47,7 @@ struct FoodMenuModel: Hashable, Decodable {
             }
         }
 
+        // Viewに配置したTab要素を識別するための文字列
         var tabID: String {
             return self.rawValue
         }

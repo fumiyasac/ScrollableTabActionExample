@@ -9,42 +9,69 @@ import SwiftUI
 
 struct FoodMenuScreen: View {
 
+    // MARK: - ViewStateProvider
+
+    private var foodMenuViewStateProvider: FoodMenuViewStateProvider
+    
     // MARK: - `@State` Property
 
-    /// View Properties
-    @State private var activeTab: ProductType = .iphone
-    @Namespace private var animation
-    @State private var productsBasedOnType: [[Product]] = []
+    // 現在選択されているTab要素としての変数
+    @State private var activeTab: FoodMenuModel.FoodMenuCategeory
+    
+    // Animation実行時の変化量を格納するための変数
     @State private var animationProgress: CGFloat = 0
 
-    /// Optional
+    // スクロール可能なNavigationBarにくっ付くタブ要素のScroll変化量を格納するための変数
     @State private var scrollableTabOffset: CGFloat = 0
+
+    // スクロール変化完了時のScroll変化量を格納するための変数(※この値は更新される)
     @State private var initialOffset: CGFloat = 0
+
+    // MARK: - `@Namespace` Property
+
+    // タブ要素をScrollに追従して動かす際に利用するNamespace Property Wrapper
+    @Namespace private var animation
+
+    // MARK: - Constants Property
+
+    // 文字列を基準としてGeometryReaderから座標値を取得するにあたり、基準となる特定の文字列
+    private let coordinateSpaceContentView = "CONTENTVIEW"
+
+    // タブ要素内に配置した下線をタップ時に動かす際に必要な、.matchedGeometryEffectに付与する一意なID文字列
+    private let matchedGeometryEffectUniqueId = "ACTIVETAB"
 
     // MARK: - Initializer
 
-    init() {}
+    init() {
+        // FoodMenuViewStateProviderの初期化する
+        foodMenuViewStateProvider = FoodMenuViewStateProviderImpl()
+        // `@State`で定義するものの初期値を設定する
+        _activeTab = State(initialValue: .fish)
+        _animationProgress = State(initialValue: 0.0)
+        _scrollableTabOffset = State(initialValue: 0.0)
+        _initialOffset = State(initialValue: 0.0)
+    }
 
     // MARK: - Body
 
     var body: some View {
         NavigationStack {
-            
-            /// For Auto Scrolling Content's
+            // 配置したTab押下時に所定のSectionまでScrollをするために、ScrollViewReaderを利用する
             ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    /// Remove Comments, if you want to use LazyStack
-                    /// Lazy Stack For Pinning View at Top While Scrolling
-                    LazyVStack(spacing: 15, pinnedViews: [.sectionHeaders]) {
+                    LazyVStack(spacing: 0.0, pinnedViews: [.sectionHeaders]) {
                         Section {
-                            ForEach(productsBasedOnType, id: \.self) { products in
-                                ProductSectionView(products)
+                            // Section要素一覧データを表示する
+                            ForEach(foodMenuViewStateProvider.groupedFoodMenuModels, id: \.self) { foodMenuModels in
+                                FoodMenuSectionView(foodMenuModels)
                             }
                         } header: {
-                            ScrollableTabs(proxy)
+                            // SectionHeader部分に対してスクロール可能なタブ要素を設置する
+                            FoodMenuCategoryScrollTab(proxy)
                         }
                     }
-                    .getRectangleViewToCoordinateSpace("CONTENTVIEW") { rect in
+                    // coordinateSpaceに定義した名前空間を基準としたオフセット値を反映する処理
+                    .getRectangleViewToCoordinateSpace(coordinateSpaceContentView) { rect in
                         scrollableTabOffset = rect.minY - initialOffset
                     }
                 }
@@ -53,206 +80,126 @@ struct FoodMenuScreen: View {
                         .fill(.white)
                 )
             }
-            /// For Scroll Content Offset Detection
-            .coordinateSpace(name: "CONTENTVIEW")
-            .navigationBarTitle("Apple Store")
+            // 独自定義したModifier「.getRectangleViewToCoordinateSpace」に定めるための基準を設定する（※今回は特定の文字列を定める）
+            .coordinateSpace(name: coordinateSpaceContentView)
+            .navigationBarTitle("Food Menu")
             .navigationBarTitleDisplayMode(.inline)
             .background {
                 Rectangle()
                     .fill(.white)
                     .ignoresSafeArea()
             }
-            .onAppear {
-                /// Filtering Products Based on Product Type (Only Once)
-                guard productsBasedOnType.isEmpty else { return }
-                
-                for type in ProductType.allCases {
-                    let products = products.filter { $0.type == type }
-                    productsBasedOnType.append(products)
-                }
+            .onFirstAppear {
+                foodMenuViewStateProvider.fetchFoodMenus()
             }
         }
     }
 
-    // MARK: - `@ViewBuilder` Private Function
+    // MARK: - Private Function
 
-    /// Products Sectioned View
     @ViewBuilder
-    func ProductSectionView(_ products: [Product]) -> some View {
-        VStack(alignment: .leading, spacing: 15) {
-            /// Safe Check
-            if let firstProduct = products.first {
-                Text(firstProduct.type.rawValue)
-                    .font(.title)
-                    .fontWeight(.semibold)
+    func FoodMenuSectionView(_ foodMenuModels: [FoodMenuModel]) -> some View {
+        VStack(alignment: .leading, spacing: 10.0) {
+            // Section要素に対応するカテゴリー名を表示する
+            if let firstFoodMenuModel = foodMenuModels.first {
+                FoodMenuHeaderView(titleName: firstFoodMenuModel.category.title)
             }
-            
-            ForEach(products) { product in
-                ProductRowView(product)
+            // Section要素に紐づいているメニューデータ一覧を表示する
+            ForEach(foodMenuModels, id: \.self) { foodMenuModel in
+                FoodMenuRowView(foodMenuModel: foodMenuModel)
             }
         }
-        .padding(15)
-        /// - For Auto Scrolling VIA ScrollViewProxy
-        .id(products.type)
-        .getRectangleViewToCoordinateSpace("CONTENTVIEW") { rect in
+        .padding(10.0)
+        // Section要素にID値（CategoryのEnum文字列）を設定し、ScrollViewReaderの基準とする
+        .id(foodMenuModels.categoryIdentifier)
+        // coordinateSpaceに定義した名前空間を基準としたオフセット値を反映する処理
+        .getRectangleViewToCoordinateSpace(coordinateSpaceContentView) { rect in
             let minY = rect.minY
-            /// When the Content Reaches it's top then updating the current active Tab
-            if (minY < 30 && -minY < (rect.midY / 2) && activeTab != products.type) && animationProgress == 0 {
+            // コンテンツ要素がSectionのトップ位置に到達した際に、現在のタブ位置を更新するための条件
+            let shouldUpdateCurrentTab = (minY < 30.0 && -minY < (rect.midY / 2.0) && activeTab != foodMenuModels.categoryIdentifier)
+            if shouldUpdateCurrentTab && animationProgress == 0 {
+                // 条件に合致する場合には、Animationを伴って現在のタブ位置を更新する（スクロール処理の最中に実施される）
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    /// Saftey Check
-                    activeTab = (minY < 30 && -minY < (rect.midY / 2) && activeTab != products.type) ? products.type : activeTab
+                    activeTab = shouldUpdateCurrentTab ? foodMenuModels.categoryIdentifier : activeTab
                 }
             }
         }
     }
 
-    /// Product Row View
     @ViewBuilder
-    func ProductRowView(_ product: Product) -> some View {
-        HStack(spacing: 15) {
-            Image(product.productImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-                .padding(10)
-                .background {
-                    RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .fill(.white)
-                }
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text(product.title)
-                    .font(.title3)
-                
-                Text(product.subtitle)
-                    .font(.callout)
-                    .foregroundColor(.gray)
-                
-                Text(product.price)
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("Purple"))
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-    
-    /// Scrollable Tabs
-    @ViewBuilder
-    func ScrollableTabs(_ proxy: ScrollViewProxy) -> some View {
+    func FoodMenuCategoryScrollTab(_ proxy: ScrollViewProxy) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                ForEach(ProductType.allCases, id: \.rawValue) { type in
-                    Text(type.rawValue)
-                        .fontWeight(.regular)
-                        .font(.callout)
-                        .foregroundColor(Color(uiColor: UIColor(code: "#bf6301")))
-                        /// Active Tab Indicator
-                        .background(alignment: .bottom, content: {
-                            if activeTab == type {
-                                Capsule()
-                                    .fill(Color(uiColor: UIColor(code: "#bf6301")))
-                                    .frame(height: 2)
-                                    .padding(.horizontal, -2)
-                                    .offset(y: 12)
-                                    .matchedGeometryEffect(id: "ACTIVETAB", in: animation)
-                            }
-                        })
-                        .padding(.horizontal, 12)
-                        .contentShape(Rectangle())
-                        /// Scrolling Tab's When ever the Active tab is Updated
-                        .id(type.tabID)
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: 0.3)) {
-                                activeTab = type
-                                animationProgress = 1.0
-                                /// Scrolling To the Selected Content
-                                proxy.scrollTo(type, anchor: .topLeading)
-                            }
-                        }
+            HStack(spacing: 12.0) {
+                // カテゴリー一覧表示を元にして、Tab要素を配置する
+                ForEach(FoodMenuModel.FoodMenuCategeory.allCases, id: \.rawValue) { category in
+                    FoodMenuCategoryTabText(category: category, proxy: proxy)
                 }
             }
-            .padding(.vertical, 12)
+            .padding(.vertical, 12.0)
+            // 変数: activeTabに変更が生じた場合は、Tab要素のAnimation処理を実行する
+            // 👉 ProductSectionView内の処理と対応する
             .onChange(of: activeTab) {
                 withAnimation(.easeInOut(duration: 0.3)) {
+                    // 合致するTab要素に対応するSectionまで0.3秒のAnimationを伴って移動する
                     proxy.scrollTo(activeTab.tabID, anchor: .center)
                 }
             }
+            // Animation処理が完了次第、変数: animationProgressをリセットする
             .checkAnimationCompleted(for: animationProgress) {
-                /// Reseting to Default, when the animation was finished
                 animationProgress = 0.0
             }
         }
         .background(.white)
     }
-}
-
-
-#Preview {
-    FoodMenuScreen()
-}
-
-/// Product Model & Sample Products
-struct Product: Identifiable,Hashable {
-    var id: UUID = UUID()
-    var type: ProductType
-    var title: String
-    var subtitle: String
-    var price: String
-    var productImage: String = ""
-}
-
-enum ProductType: String,CaseIterable {
-    case iphone = "iPhone"
-    case ipad = "iPad"
-    case macbook = "MacBook"
-    case desktop = "Mac Desktop"
-    case appleWatch = "Apple Watch"
-    case airpods = "Airpods"
     
-    var tabID: String {
-        /// Creating Another UniqueID for Tab Scrolling
-        return self.rawValue + self.rawValue.prefix(4)
+    @ViewBuilder
+    func FoodMenuCategoryTabText(
+        category: FoodMenuModel.FoodMenuCategeory,
+        proxy: ScrollViewProxy
+    ) -> some View {
+        Text(category.title)
+            .fontWeight(.regular)
+            .font(.caption)
+            .foregroundColor(Color(uiColor: UIColor(code: "#bf6301")))
+            // 現在選択中のTab要素の場合は、下線を表示させる形にする
+            .background(alignment: .bottom, content: {
+                if activeTab == category {
+                    Capsule()
+                        .fill(Color(uiColor: UIColor(code: "#bf6301")))
+                        .frame(height: 3.0)
+                        .padding(.horizontal, -3.0)
+                        .offset(y: 12.0)
+                        // 現在選択中以外のTab要素を押下時に、該当位置まで移動する処理のために、.matchedGeometryEffectを利用している
+                        .matchedGeometryEffect(id: matchedGeometryEffectUniqueId, in: animation)
+                }
+            })
+            .padding(.horizontal, 12.0)
+            .contentShape(Rectangle())
+            // タップ時に下線表示の位置を持ってくるために、Tab要素にIDを付与する
+            .id(category.tabID)
+            .onTapGesture {
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    activeTab = category
+                    animationProgress = 1.0
+                    // 現在選択中以外のTab要素タップ時は、該当するTab要素までスクロール移動をする
+                    proxy.scrollTo(category, anchor: .topLeading)
+                }
+            }
     }
 }
 
-fileprivate var products: [Product] = [
-    /// Apple Watch
-    Product(type: .appleWatch, title: "Apple Watch", subtitle: "Ultra: Alphine Loop", price: "$999",productImage: "AppleWatchUltra"),
-    Product(type: .appleWatch, title: "Apple Watch", subtitle: "Series 8: Black", price: "$599",productImage: "AppleWatch8"),
-    Product(type: .appleWatch, title: "Apple Watch", subtitle: "Series 6: Red", price: "$359",productImage: "AppleWatch6"),
-    Product(type: .appleWatch, title: "Apple Watch", subtitle: "Series 4: Black", price: "$250", productImage: "AppleWatch4"),
-    /// iPhone's
-    Product(type: .iphone, title: "iPhone 14 Pro Max", subtitle: "A16 - Purple", price: "$1299", productImage: "iPhone14"),
-    Product(type: .iphone, title: "iPhone 13", subtitle: "A15 - Pink", price: "$699", productImage: "iPhone13"),
-    Product(type: .iphone, title: "iPhone 12", subtitle: "A14 - Blue", price: "$599", productImage: "iPhone12"),
-    Product(type: .iphone, title: "iPhone 11", subtitle: "A13 - Purple", price: "$499", productImage: "iPhone11"),
-    Product(type: .iphone, title: "iPhone SE 2", subtitle: "A13 - White", price: "$399", productImage: "iPhoneSE"),
-    /// MacBook's
-    Product(type: .macbook, title: "MacBook Pro 16", subtitle: "M2 Max - Silver", price: "$2499", productImage: "MacBookPro16"),
-    Product(type: .macbook, title: "MacBook Pro", subtitle: "M1 - Space Grey", price: "$1299", productImage: "MacBookPro"),
-    Product(type: .macbook, title: "MacBook Air", subtitle: "M1 - Gold", price: "$999", productImage: "MacBookAir"),
-    /// iPad's
-    Product(type: .ipad, title: "iPad Pro", subtitle: "M1 - Silver", price: "$999", productImage: "iPadPro"),
-    Product(type: .ipad, title: "iPad Air 4", subtitle: "A14 - Pink", price: "$699", productImage: "iPadAir"),
-    Product(type: .ipad, title: "iPad Mini", subtitle: "A15 - Grey", price: "$599", productImage: "iPadMini"),
-    /// Desktop's
-    Product(type: .desktop, title: "Mac Studio", subtitle: "M1 Max - Silver", price: "$1999", productImage: "MacStudio"),
-    Product(type: .desktop, title: "Mac Mini", subtitle: "M2 Pro - Space Gray", price: "$999", productImage: "MacMini"),
-    Product(type: .desktop, title: "iMac", subtitle: "M1 - Purple", price: "$1599", productImage: "iMac"),
-    /// Airpods
-    Product(type: .airpods, title: "Airpods", subtitle: "Pro 2nd Gen", price: "$249",productImage: "AirpodsPro"),
-    Product(type: .airpods, title: "Airpods", subtitle: "3rd Gen", price: "$179",productImage: "Airpods3"),
-    Product(type: .airpods, title: "Airpods", subtitle: "2nd Gen", price: "$129",productImage: "Airpods2"),
-]
+// MARK: - Fileprivate Function
 
-fileprivate extension [Product] {
-    /// Return the Array's First Product Type
-    var type: ProductType {
+fileprivate extension [FoodMenuModel] {
+
+    // MEMO: APIからの取得データは[[FoodMenuModel]]型となるため、最初のデータから取得できるCategory値を利用する
+
+    // MARK: - Computed Property
+    
+    var categoryIdentifier: FoodMenuModel.FoodMenuCategeory {
         if let firstProduct = self.first {
-            return firstProduct.type
+            return firstProduct.category
         }
-        
-        return .iphone
+        return .fish
     }
 }
