@@ -43,7 +43,7 @@ final class ApiClientManager {
         case premiumPosters = "premium_posters"
 
         func getBaseUrl() -> String {
-            return [host, version, self.rawValue].joined(separator: "/")
+            return [host, self.rawValue].joined(separator: "/")
         }
     }
 
@@ -51,7 +51,6 @@ final class ApiClientManager {
 
     // MEMO: API ServerへのURLに関する情報
     private static let host = "http://localhost:3001"
-    private static let version = "v1"
 
     // MARK: - Function
 
