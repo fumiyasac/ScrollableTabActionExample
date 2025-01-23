@@ -46,6 +46,10 @@ struct FoodMenuModel: Hashable, Decodable {
             case .soup: return "🍲スープ"
             }
         }
+
+        var tabID: String {
+            return self.rawValue
+        }
     }
 
     enum FoodMenuDish: String, CaseIterable {
@@ -91,7 +95,7 @@ struct FoodMenuModel: Hashable, Decodable {
     ) {
         self.id = id
         self.name = name
-        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .meat
+        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: category) ?? .fish
         self.dish = FoodMenuModel.FoodMenuDish(rawValue: dish) ?? .mainDish
         self.price = price
         self.kcal = kcal
@@ -106,7 +110,7 @@ struct FoodMenuModel: Hashable, Decodable {
         // JSONの配列内の要素にある値をDecodeして初期化する
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: try container.decode(String.self, forKey: .category)) ?? .meat
+        self.category = FoodMenuModel.FoodMenuCategeory(rawValue: try container.decode(String.self, forKey: .category)) ?? .fish
         self.dish = FoodMenuModel.FoodMenuDish(rawValue: try container.decode(String.self, forKey: .dish)) ?? .mainDish
         self.price = try container.decode(Int.self, forKey: .price)
         self.kcal = try container.decode(Int.self, forKey: .kcal)
