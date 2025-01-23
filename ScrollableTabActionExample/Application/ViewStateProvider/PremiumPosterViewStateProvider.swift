@@ -11,7 +11,6 @@ import Observation
 // MARK: - Protocol
 
 protocol PremiumPosterViewStateProvider {
-
     var isLoading: Bool { get }
     var errorMessage: String? { get }
     var premiumPosterModels: [PremiumPosterModel] { get }
