@@ -13,7 +13,7 @@ import Observation
 protocol FoodMenuViewStateProvider {
     var isLoading: Bool { get }
     var errorMessage: String? { get }
-    var foodMenuModels: [FoodMenuModel] { get }
+    var foodMenuModels: [[FoodMenuModel]] { get }
     func fetchFoodMenus()
 }
 
@@ -29,7 +29,7 @@ public final class FoodMenuViewStateProviderImpl: FoodMenuViewStateProvider {
 
     private var _isLoading: Bool = false
     private var _errorMessage: String?
-    private var _foodMenuModels: [FoodMenuModel] = []
+    private var _foodMenuModels: [[FoodMenuModel]] = []
 
     // MARK: - Property (`@Observable`)
 
@@ -41,7 +41,7 @@ public final class FoodMenuViewStateProviderImpl: FoodMenuViewStateProvider {
         _errorMessage
     }
     
-    var foodMenuModels: [FoodMenuModel] {
+    var foodMenuModels: [[FoodMenuModel]] {
         _foodMenuModels
     }
 
@@ -56,7 +56,11 @@ public final class FoodMenuViewStateProviderImpl: FoodMenuViewStateProvider {
     func fetchFoodMenus() {
         Task { @MainActor in
             do {
-                _foodMenuModels = try await foodMenuRepository.getAll()
+                let allFoodMenu = try await foodMenuRepository.getAll()
+                for category in FoodMenuModel.FoodMenuCategeory.allCases {
+                    let foodMenus = allFoodMenu.filter { $0.category == category }
+                    _foodMenuModels.append(foodMenus)
+                }
             } catch let error {
                 print(error)
             }
