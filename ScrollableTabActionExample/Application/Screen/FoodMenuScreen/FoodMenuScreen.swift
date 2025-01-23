@@ -1,15 +1,13 @@
 //
-//  ExampleScreen.swift
+//  FoodMenuScreen.swift
 //  ScrollableTabActionExample
 //
-//  Created by 酒井文也 on 2024/12/17.
+//  Created by 酒井文也 on 2025/01/23.
 //
 
 import SwiftUI
 
-// TODO: 場合によってはこちらを使う（こちらを整理して利用する）
-
-struct ExampleScreen: View {
+struct FoodMenuScreen: View {
 
     // MARK: - `@State` Property
 
@@ -191,10 +189,9 @@ struct ExampleScreen: View {
 
 
 #Preview {
-    ExampleScreen()
+    FoodMenuScreen()
 }
 
-/*
 /// Product Model & Sample Products
 struct Product: Identifiable,Hashable {
     var id: UUID = UUID()
@@ -218,7 +215,6 @@ enum ProductType: String,CaseIterable {
         return self.rawValue + self.rawValue.prefix(4)
     }
 }
-*/
 
 fileprivate var products: [Product] = [
     /// Apple Watch
@@ -250,7 +246,6 @@ fileprivate var products: [Product] = [
     Product(type: .airpods, title: "Airpods", subtitle: "2nd Gen", price: "$129",productImage: "Airpods2"),
 ]
 
-
 fileprivate extension [Product] {
     /// Return the Array's First Product Type
     var type: ProductType {
@@ -261,4 +256,3 @@ fileprivate extension [Product] {
         return .iphone
     }
 }
-
