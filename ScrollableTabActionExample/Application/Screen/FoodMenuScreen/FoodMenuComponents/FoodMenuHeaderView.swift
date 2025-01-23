@@ -9,15 +9,35 @@ import SwiftUI
 
 struct FoodMenuHeaderView: View {
 
+    // MARK: - Property
+
+    private var titleName: String
+
+    // MARK: - Initializer
+
+    init(titleName: String) {
+        self.titleName = titleName
+    }
+
     // MARK: - Body
 
     var body: some View {
-        Text("FoodMenuHeaderView")
+        VStack(alignment: .leading) {
+            HStack {
+                Text(titleName)
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.primary)
+                    .lineLimit(1)
+                Spacer()
+            }
+            .padding(8.0)
+        }
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    FoodMenuHeaderView()
+    FoodMenuHeaderView(titleName: "🐟魚料理")
 }
