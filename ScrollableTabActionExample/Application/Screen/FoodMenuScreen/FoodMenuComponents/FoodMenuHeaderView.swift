@@ -31,7 +31,8 @@ struct FoodMenuHeaderView: View {
                     .lineLimit(1)
                 Spacer()
             }
-            .padding(8.0)
+            .padding(.top, 32.0)
+            .padding(.horizontal, 8.0)
         }
     }
 }
