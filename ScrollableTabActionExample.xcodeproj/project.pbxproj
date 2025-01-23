@@ -12,7 +12,6 @@
 		DE1DC9B22D3F872E00873A8B /* premium_posters.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1DC9B02D3F872E00873A8B /* premium_posters.json */; };
 		DE1DC9B42D413CF900873A8B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE1DC9B32D413CF900873A8B /* SDWebImageSwiftUI */; };
 		DE1DC9B62D42117600873A8B /* FoodMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1DC9B52D42117600873A8B /* FoodMenuScreen.swift */; };
-		DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */; };
 		DE61C9322C1205D30058FEEF /* ScrollableTabActionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */; };
 		DE61C94E2C237C3F0058FEEF /* FoodMenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */; };
 		DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C94F2C237C550058FEEF /* PremiumPosterRepository.swift */; };
@@ -55,7 +54,6 @@
 		DE1DC9AF2D3F872E00873A8B /* food_menus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = food_menus.json; sourceTree = "<group>"; };
 		DE1DC9B02D3F872E00873A8B /* premium_posters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = premium_posters.json; sourceTree = "<group>"; };
 		DE1DC9B52D42117600873A8B /* FoodMenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuScreen.swift; sourceTree = "<group>"; };
-		DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScreen.swift; sourceTree = "<group>"; };
 		DE61C92F2C1205D30058FEEF /* ScrollableTabActionExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollableTabActionExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE61C9312C1205D30058FEEF /* ScrollableTabActionExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableTabActionExampleTests.swift; sourceTree = "<group>"; };
 		DE61C94D2C237C3E0058FEEF /* FoodMenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuRepository.swift; sourceTree = "<group>"; };
@@ -111,14 +109,6 @@
 				DE61C9562C25D9760058FEEF /* FoodMenuHeaderView.swift */,
 			);
 			path = FoodMenuComponents;
-			sourceTree = "<group>";
-		};
-		DE304D512D11A07E0085ABD0 /* ExampleScreen */ = {
-			isa = PBXGroup;
-			children = (
-				DE304D562D11A0BA0085ABD0 /* ExampleScreen.swift */,
-			);
-			path = ExampleScreen;
 			sourceTree = "<group>";
 		};
 		DE61C9302C1205D30058FEEF /* ScrollableTabActionExampleTests */ = {
@@ -187,7 +177,6 @@
 		DEB414792BEA811200DEF655 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				DE304D512D11A07E0085ABD0 /* ExampleScreen */,
 				DEB414872BEA89E100DEF655 /* FoodMenuScreen */,
 				DEB414862BEA899100DEF655 /* PremiumPosterScreen */,
 			);
@@ -405,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB414962BED9F6800DEF655 /* CGFloatExtension.swift in Sources */,
-				DE304D572D11A0BA0085ABD0 /* ExampleScreen.swift in Sources */,
 				DE1DC9B62D42117600873A8B /* FoodMenuScreen.swift in Sources */,
 				DEB4147C2BEA819600DEF655 /* AppDelegate.swift in Sources */,
 				DE61C9502C237C550058FEEF /* PremiumPosterRepository.swift in Sources */,
